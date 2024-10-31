@@ -15,7 +15,7 @@
           class="hamburger-menu md:hidden"
           aria-label="Open menu"
           aria-expanded="false"
-        >   
+        >
           <!-- Icon for hamburger -->
           <span></span>
           <span></span>
@@ -49,9 +49,40 @@
         <p>How people can reach you.</p>
       </section>
     </main>
-
-    <footer>
-      <p>&copy; 2024 Tim Kelso</p>
+    <hr/>
+    <footer
+      class="flex flex-col items-center gap-3 px-9 py-5 sm:flex-row-reverse sm:justify-between"
+    >
+      <ul class="flex w-full min-w-24 max-w-36 justify-between">
+        <li>
+          <a href="https://twitter.com" aria-label="X/Twitter">
+            <img
+              src="./assets/icons/x-twitter-icon.svg"
+              alt="X/Twitter"
+              class="size-6 opacity-50 hover:opacity-100"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com" aria-label="GitHub">
+            <img
+              src="./assets/icons/github-icon.svg"
+              alt="GitHub"
+              class="size-6 opacity-50 hover:opacity-100"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com" aria-label="LinkedIn">
+            <img
+              src="./assets/icons/linkedin-icon.svg"
+              alt="LinkedIn"
+              class="size-6 opacity-50 hover:opacity-100"
+            />
+          </a>
+        </li>
+      </ul>
+      <p class="text-pretty text-center opacity-50">&copy; 2024 Tim Kelso</p>
     </footer>
   </body>
 </html>
