@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,14 +10,8 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
 
     <title>Tim Kelso</title>
   </head>
@@ -54,30 +48,99 @@
       <!-- Första portfolion --- that pizza place --- Teknikpodden --- Nebuline --- Sow 'n' Grow --- Tims 2048 --- Il forno magico --- NTB Biluthyrning --- Florista --- Den här portfolion -->
       <section id="portfolio">
         <h2 class="text-center font-serif text-4xl">Previous Projects</h2>
-        <article>
-          <div>
-            <h3>Nebuline</h3>
-            <p>En av mina första hemsidor åt ett påhittat rymdraketsbolag</p>
-          </div>
-          <img src="assets/images/Screenshot of Nebuline.jpg" alt="" />
-          <!-- Link: https://itgwebb.se/klass/te21h/tim/slutprojekt/index.html -->
-        </article>
-        <article>
-          <div>
-            <h3>Sow 'n' Grow</h3>
-            <p>En mockup av en mobilapp för trädgårsentusiaster</p>
-          </div>
-          <img src="assets/images/Screenshot of Sow 'n' Grow.jpg" alt="" />
-          <!-- Link: https://xd.adobe.com/view/7581a416-7240-4b6a-87b3-922691013b3f-20d2/ -->
-        </article>
-        <article>
-          <div>
-            <h3>Tim's 2048</h3>
-            <p>En clone av det populära spelet 2048</p>
-          </div>
-          <img src="assets/images/Screenshot of Tims 2048.jpg" alt="" />
+        <div>
+          <h3 class="text-center font-serif text-2xl">Solo Work</h3>
+          <article>
+            <div>
+              <h3 class="text-xl">Nebuline</h3>
+              <p>
+                This is a website for a fictional space tourism company called Nebuline. The website is designed with vanilla HTML, CSS, and a bit of
+                JavaScript.
+              </p>
+            </div>
+            <div>
+              <picture class="dark:hidden">
+                <source srcset="assets\images\portfolio\solo_projects\nebuline\section_2\light_mode\img.avif" type="image/avif" />
+                <source srcset="assets\images\portfolio\solo_projects\nebuline\section_2\light_mode\img.webp" type="image/webp" />
+                <img
+                  src="assets\images\portfolio\solo_projects\nebuline\section_2\light_mode\img.jpg"
+                  alt="Screenshot of the website: Nebuline, in light mode"
+                  loading="lazy"
+                />
+              </picture>
+              <picture class="hidden dark:block">
+                <source srcset="assets\images\portfolio\solo_projects\nebuline\section_2\dark_mode\img.avif" type="image/avif" />
+                <source srcset="assets\images\portfolio\solo_projects\nebuline\section_2\dark_mode\img.webp" type="image/webp" />
+                <img
+                  src="assets\images\portfolio\solo_projects\nebuline\section_2\dark_mode\img.jpg"
+                  alt="Screenshot of the website: Nebuline, in dark mode"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+
+            <!-- Link: https://itgwebb.se/klass/te21h/tim/slutprojekt/index.html -->
+          </article>
+          <article>
+            <div>
+              <h3 class="text-xl">Sow 'n' Grow</h3>
+              <p>A mockup of a mobile app for garden enthusiasts. The app is designed with Adobe XD.</p>
+            </div>
+            <div>
+              <picture class="dark:hidden">
+                <source srcset="assets\images\portfolio\solo_projects\sow_n_grow\light_mode\img.avif" type="image/avif" />
+                <source srcset="assets\images\portfolio\solo_projects\sow_n_grow\light_mode\img.webp" type="image/webp" />
+                <img
+                  src="assets\images\portfolio\solo_projects\sow_n_grow\light_mode\img.jpg"
+                  alt="Screenshot of the mobile app: Sow 'n' Grow, in light mode"
+                  loading="lazy"
+                />
+              </picture>
+              <picture class="hidden dark:block">
+                <source srcset="assets\images\portfolio\solo_projects\sow_n_grow\dark_mode\img.avif" type="image/avif" />
+                <source srcset="assets\images\portfolio\solo_projects\sow_n_grow\dark_mode\img.webp" type="image/webp" />
+                <img
+                  src="assets\images\portfolio\solo_projects\sow_n_grow\dark_mode\img.jpg"
+                  alt="Screenshot of the mobile app: Sow 'n' Grow, in dark mode"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+
+            <!-- Link: https://xd.adobe.com/view/7581a416-7240-4b6a-87b3-922691013b3f-20d2/ -->
+          </article>
+          <article>
+            <div>
+              <h3 class="text-xl">Tim's 2048</h3>
+              <p>A clone of the popular game 2048. This project is heavier on JavaScript.</p>
+            </div>
+            <div>
+              <picture class="dark:hidden">
+                <source srcset="assets\images\portfolio\solo_projects\tims_2048\light_mode\img.avif" type="image/avif" />
+                <source srcset="assets\images\portfolio\solo_projects\tims_2048\light_mode\img.webp" type="image/webp" />
+                <img
+                  src="assets\images\portfolio\solo_projects\tims_2048\light_mode\img.jpg"
+                  alt="Screenshot of the game: Tim's 2048, in light mode"
+                  loading="lazy"
+                />
+              </picture>
+              <picture class="hidden dark:block">
+                <source srcset="assets\images\portfolio\solo_projects\tims_2048\dark_mode\img.avif" type="image/avif" />
+                <source srcset="assets\images\portfolio\solo_projects\tims_2048\dark_mode\img.webp" type="image/webp" />
+                <img
+                  src="assets\images\portfolio\solo_projects\tims_2048\dark_mode\img.jpg"
+                  alt="Screenshot of the game: Tim's 2048, in dark mode"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
             <!-- Link: https://nti-tim.github.io/Tims-2048/ -->
-        </article>
+          </article>
+        </div>
+        <hr class="border-gray-200 dark:border-gray-800" />
+        <div>
+          <h3 class="text-center font-serif text-2xl">Group Work</h3>
+        </div>
       </section>
 
       <!-- <section id="contact">
@@ -85,10 +148,8 @@
         <p>How people can reach you.</p>
       </section> -->
     </main>
-    <hr />
-    <footer
-      class="flex flex-col items-center gap-2 py-5 sm:flex-row-reverse sm:justify-between sm:px-9"
-    >
+    <hr class="border-gray-200 dark:border-gray-800" />
+    <footer class="flex flex-col items-center gap-2 py-5 sm:flex-row-reverse sm:justify-between sm:px-9">
       <ul class="flex w-full min-w-24 max-w-36 justify-between">
         <li>
           <a href="https://x.com" aria-label="X/Twitter" class="group">
