@@ -5,9 +5,9 @@
   --scrollbar-thumb-border-radius: 6px;
 
   /* Scrollbar light mode */
-  --scrollbar-track-light: #f1f1f1;
-  --scrollbar-thumb-light: #d1d1d1;
-  --scrollbar-thumb-hover-light: #b1b1b1;
+  --scrollbar-track-light: #e1e1e1;
+  --scrollbar-thumb-light: #aeaeae;
+  --scrollbar-thumb-hover-light: #858585;
 
   /* Scrollbar dark mode */
   --scrollbar-track-dark: #1a1a1a;
