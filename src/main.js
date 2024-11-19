@@ -1,6 +1,6 @@
-import "./style.css"; // Ensure styles load first
-import { initAnimations } from "./animations.js";
+import { reels } from './data/reels';
+import { createReel } from './components/reel';
 
-document.addEventListener("DOMContentLoaded", () => {
-  initAnimations();
-});
+const reelsContainer = document.getElementById('reels-container');
+
+reelsContainer.innerHTML = reels.map(createReel).join('');
