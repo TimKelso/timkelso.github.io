@@ -1,14 +1,22 @@
-// import React from 'react';
+// ==================== IMPORTS ===============================================
 
+// import React from 'react';
 import Footer from './components/Footer';
+import PortfolioSection from './components/PortfolioSection';
+import HorizontalLine from './components/HorizontalLine';
+
+// ==================== COMPONENT =============================================
 
 function App() {
   return (
     <div>
-      <hr className="border-gray-200 dark:border-gray-800" />
+      <PortfolioSection />
+      <HorizontalLine />
       <Footer />
     </div>
   );
 }
+
+// ==================== EXPORTS ===============================================
 
 export default App;

@@ -5,4 +5,6 @@ export default {
   semi: true,
   singleQuote: true,
   trailingComma: 'all',
+  bracketSpacing: true,
+  endOfLine: 'lf',
 };
