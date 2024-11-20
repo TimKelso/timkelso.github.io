@@ -1,8 +1,13 @@
 module.exports = {
   content: ['./index.html', './src/**/*.{js,jsx}'],
-
+  darkMode: 'media',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Noto Sans', 'sans-serif'],
+        serif: ['Noto Serif', 'serif'],
+      },
+    },
   },
   plugins: [],
 };
