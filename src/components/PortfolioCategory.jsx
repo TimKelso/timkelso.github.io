@@ -1,6 +1,5 @@
 // ==================== IMPORTS ===============================================
 
-// import React from 'react';
 import ProjectCard from './ProjectCard';
 import PropTypes from 'prop-types';
 
@@ -17,13 +16,12 @@ const PortfolioCategory = ({ title, projects }) => {
   );
 };
 
-// ==================== EXPORTS ===============================================
-
-export default PortfolioCategory;
-
 // ==================== PROP TYPES ============================================
 
 PortfolioCategory.propTypes = {
   title: PropTypes.string.isRequired,
   projects: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
+
+// ==================== EXPORTS ===============================================
+export default PortfolioCategory;

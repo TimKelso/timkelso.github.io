@@ -1,64 +1,40 @@
 // ==================== IMPORTS ===============================================
 
-// import React from 'react';
 import PropTypes from 'prop-types';
+import ResponsiveImage from './ResponsiveImage';
+import CardButton from './CardButton';
+import TagList from './TagList';
 
 // ==================== COMPONENT =============================================
 
-const ProjectCard = ({ date, title, description, tags, imagePath, learnMoreLink, viewProjectLink }) => {
-  // --------------------- FUNCTIONS ------------------------------------------
+const ProjectCard = ({ date, title, description, tags, imagePath, learnMoreLink, viewProjectLink }) => (
+  <article className="flex h-dvh flex-row">
+    <div id="timeline">vertical line</div>
 
-  const getImageSrc = (mode, ext) => `${imagePath}/${mode}/img.${ext}`;
-
-  // --------------------- JSX ------------------------------------------------
-
-  return (
-    <article className="h-dvh">
-      <div>
-        <h5 className="px-5 py-3 text-3xl">{date}</h5>
+    <div id="content" className="flex flex-col gap-5">
+      <h5 className="text-3xl">{date}</h5>
+      <ResponsiveImage imagePath={imagePath} alt={`Screenshot of ${title}`} />
+      <div className="flex flex-col gap-3">
+        <h4 className="text-2xl">{title}</h4>
+        <p className="text-pretty">{description}</p>
+        <TagList tags={tags} />
       </div>
-      <div>
-        <picture className="dark:hidden">
-          <source srcSet={getImageSrc('light_mode', 'avif')} type="image/avif" />
-          <source srcSet={getImageSrc('light_mode', 'webp')} type="image/webp" />
-          <img src={getImageSrc('light_mode', 'jpg')} alt={`Screenshot of ${title} in light mode`} loading="lazy" />
-        </picture>
-        <picture className="hidden dark:block">
-          <source srcSet={getImageSrc('dark_mode', 'avif')} type="image/avif" />
-          <source srcSet={getImageSrc('dark_mode', 'webp')} type="image/webp" />
-          <img src={getImageSrc('dark_mode', 'jpg')} alt={`Screenshot of ${title} in dark mode`} loading="lazy" />
-        </picture>
-      </div>
-      <div className="px-5 py-3">
-        <div className="mb-5">
-          <h4 className="mb-1 text-2xl">{title}</h4>
-          <p className="mb-1 text-pretty">{description}</p>
-          <ul className="flex flex-wrap gap-2 text-xs">
-            {tags.map((tag, index) => (
-              <li key={index} className="select-none rounded-full border border-black px-1 py-0.5 dark:border-gray-300">
-                {tag}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="flex justify-center gap-10">
-          <button className="flex rounded-md bg-gray-300 px-2 py-1 font-semibold text-gray-950" onClick={() => window.open(learnMoreLink)}>
-            Learn More
-            <i className="material-symbols-outlined ml-1">info</i>
-          </button>
-          <button className="flex rounded-md bg-gray-300 px-2 py-1 font-semibold text-gray-950" onClick={() => window.open(viewProjectLink)}>
-            View Project
-            <i className="material-symbols-outlined ml-1">open_in_new</i>
-          </button>
-        </div>
-      </div>
-    </article>
-  );
-};
+    </div>
 
-// ==================== EXPORTS ===============================================
-
-export default ProjectCard;
+    <div id="actions" className="flex flex-col justify-between">
+      <div className="flex flex-col gap-1">
+        <CardButton icon="more_vert" onClick={() => window.open(learnMoreLink)} />
+        <CardButton icon="bookmarks" onClick={() => window.open(viewProjectLink)} />
+      </div>
+      <div className="flex flex-col gap-1">
+        <CardButton icon="bookmark" label="Save" onClick={() => console.log('Save to bookmarks')} />
+        <CardButton icon="info" label="Info" onClick={() => console.log('Show more info')} />
+        <CardButton icon="code" label="Code" onClick={() => console.log('Go to GitHub repo')} />
+        <CardButton icon="open_in_new" label="Open" onClick={() => window.open(viewProjectLink)} />
+      </div>
+    </div>
+  </article>
+);
 
 // ==================== PROP TYPES ============================================
 
@@ -71,3 +47,7 @@ ProjectCard.propTypes = {
   learnMoreLink: PropTypes.string.isRequired,
   viewProjectLink: PropTypes.string.isRequired,
 };
+
+// ==================== EXPORTS ===============================================
+
+export default ProjectCard;
