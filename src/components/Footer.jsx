@@ -23,9 +23,9 @@ function Footer() {
     },
   ];
 
-  // --------------------- JSX ------------------------------------------------
-
   return (
+    // --------------------- JSX ------------------------------------------------
+
     <>
       <footer className="flex flex-col items-center gap-2 py-5 sm:flex-row-reverse sm:justify-between sm:px-9">
         <ul className="flex w-full min-w-24 max-w-36 justify-between">

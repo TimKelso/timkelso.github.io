@@ -46,15 +46,16 @@ const PortfolioSection = () => {
     },
   ];
 
-  // --------------------- JSX ------------------------------------------------
-
   return (
-    <section id="portfolio">
-      <h2 className="text-center font-serif text-5xl">My Journey</h2>
-      <PortfolioCategory title="Solo Projects" projects={soloProjects} />
-      <HorizontalLine />
-      <PortfolioCategory title="Group Projects" projects={groupProjects} />
-    </section>
+    // --------------------- JSX ------------------------------------------------
+    <>
+      <section id="portfolio">
+        <h2 className="text-center font-serif text-5xl">My Journey</h2>
+        <PortfolioCategory title="Solo Projects" projects={soloProjects} />
+        <HorizontalLine />
+        <PortfolioCategory title="Group Projects" projects={groupProjects} />
+      </section>
+    </>
   );
 };
 

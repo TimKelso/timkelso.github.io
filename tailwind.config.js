@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         sans: ['Noto Sans', 'sans-serif'],
         serif: ['Noto Serif', 'serif'],
+        mono: ['Noto Mono', 'monospace'],
       },
     },
   },
