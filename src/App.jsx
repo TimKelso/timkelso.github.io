@@ -1,16 +1,16 @@
 // ==================== IMPORTS ===============================================
 
 // import React from 'react';
-import Footer from './components/Footer';
-import PortfolioSection from './components/PortfolioSection';
-import HorizontalLine from './components/HorizontalLine';
+import Footer from './components/global/limited/Footer';
+import Section from './components/feature/portfolio/Section';
+import HorizontalLine from './components/global/common/HorizontalLine';
 
 // ==================== COMPONENT =============================================
 
 function App() {
   return (
     <div>
-      <PortfolioSection />
+      <Section />
       <HorizontalLine />
       <Footer />
     </div>

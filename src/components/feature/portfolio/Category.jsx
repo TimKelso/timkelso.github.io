@@ -1,18 +1,18 @@
 // ==================== IMPORTS ===============================================
 
-import ProjectCard from './ProjectCard';
+import Project from './Project';
 import PropTypes from 'prop-types';
 
 // ==================== COMPONENT =============================================
 
-const PortfolioCategory = ({ title, projects }) => {
+const Category = ({ title, projects }) => {
   return (
     // --------------------- JSX ------------------------------------------------
     <>
       <div>
         <h3 className="text-center font-serif text-3xl">{title}</h3>
         {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
+          <Project key={index} {...project} />
         ))}
       </div>
     </>
@@ -21,10 +21,10 @@ const PortfolioCategory = ({ title, projects }) => {
 
 // ==================== PROP TYPES ============================================
 
-PortfolioCategory.propTypes = {
+Category.propTypes = {
   title: PropTypes.string.isRequired,
   projects: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 // ==================== EXPORTS ===============================================
-export default PortfolioCategory;
+export default Category;

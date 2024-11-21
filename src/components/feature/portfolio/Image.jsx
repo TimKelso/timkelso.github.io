@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 // ==================== COMPONENT =============================================
 
-const ResponsiveImage = ({ imagePath, alt }) => {
+const Image = ({ imagePath, alt }) => {
   // --------------------- FUNCTIONS ------------------------------------------
 
   const getImageSrc = (mode, ext) => `${imagePath}/${mode}/img.${ext}`;
@@ -29,11 +29,11 @@ const ResponsiveImage = ({ imagePath, alt }) => {
 
 // ==================== PROP TYPES ============================================
 
-ResponsiveImage.propTypes = {
+Image.propTypes = {
   imagePath: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
 };
 
 // ==================== EXPORTS ===============================================
 
-export default ResponsiveImage;
+export default Image;

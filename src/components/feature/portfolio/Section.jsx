@@ -1,11 +1,11 @@
 // ==================== IMPORTS ===============================================
 
-import PortfolioCategory from './PortfolioCategory';
-import HorizontalLine from './HorizontalLine';
+import Category from './Category';
+import HorizontalLine from '../../global/common/HorizontalLine';
 
 // ==================== COMPONENT =============================================
 
-const PortfolioSection = () => {
+const Section = () => {
   // --------------------- DATA -----------------------------------------------
 
   const soloProjects = [
@@ -51,9 +51,9 @@ const PortfolioSection = () => {
     <>
       <section id="portfolio">
         <h2 className="text-center font-serif text-5xl">My Journey</h2>
-        <PortfolioCategory title="Solo Projects" projects={soloProjects} />
+        <Category title="Solo Projects" projects={soloProjects} />
         <HorizontalLine />
-        <PortfolioCategory title="Group Projects" projects={groupProjects} />
+        <Category title="Group Projects" projects={groupProjects} />
       </section>
     </>
   );
@@ -61,4 +61,4 @@ const PortfolioSection = () => {
 
 // ==================== EXPORTS ===============================================
 
-export default PortfolioSection;
+export default Section;

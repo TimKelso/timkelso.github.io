@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 // ==================== COMPONENT =============================================
 
-const CardButton = ({ icon, label, onClick }) => (
+const Button = ({ icon, label, onClick }) => (
   // --------------------- JSX ------------------------------------------------
   <>
     <button className="flex select-none flex-col items-center p-2" onClick={onClick}>
@@ -16,7 +16,7 @@ const CardButton = ({ icon, label, onClick }) => (
 
 // ==================== PROP TYPES ============================================
 
-CardButton.propTypes = {
+Button.propTypes = {
   icon: PropTypes.string.isRequired,
   label: PropTypes.string,
   onClick: PropTypes.func.isRequired,
@@ -24,4 +24,4 @@ CardButton.propTypes = {
 
 // ==================== EXPORTS ===============================================
 
-export default CardButton;
+export default Button;

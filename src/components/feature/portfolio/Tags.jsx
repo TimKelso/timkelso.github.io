@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 // ==================== COMPONENT =============================================
 
-const TagList = ({ tags }) => {
+const Tags = ({ tags }) => {
   const tagColors = {
     Website: 'text-red-600 border-red-600 dark:text-red-800 dark:border-red-800',
     Bootsrap: 'text-red-600 border-red-600 dark:text-red-800 dark:border-red-800',
@@ -60,10 +60,10 @@ const TagList = ({ tags }) => {
 
 // ==================== PROP TYPES ============================================
 
-TagList.propTypes = {
+Tags.propTypes = {
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 // ==================== EXPORTS ===============================================
 
-export default TagList;
+export default Tags;
