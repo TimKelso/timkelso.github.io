@@ -43,15 +43,41 @@ const Section = () => {
   ];
 
   const groupProjects = [
-    // {
-    //   date: '18 May 2023',
-    //   title: 'TESTING LONG TITLEFORGROUPPROJECT',
-    //   descriptionHook: 'A sleek and interactive website for a fictional space tourism companycompanycompanycompanycompanycompany.',
-    //   descriptionLong:
-    //     'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisinisinisinisinisinisinisinisinisinisinisinisinisinisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit anim id est laborum.',
-    //   tags: ['Website', 'Design', 'Corporate', 'UI', 'Group', 'Team', 'Collaboration', 'ProjectVeryLongTagNameExample', 'HTML', 'CSS', 'JavaScript'],
-    //   imagePath: 'assets/images/portfolio/solo_projects/nebuline/section_1',
-    // },
+    {
+      date: '10 Sep 2024',
+      title: 'Il Forno Magico',
+      descriptionHook: 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      descriptionLong:
+        'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit anim id est laborum.lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit anim id est laborum.',
+      tags: ['Website', 'Design', 'Bootstrap', 'Python'],
+      imagePath: 'assets/images/portfolio/group_projects/il_forno_magico',
+      projectURL: 'https://ilfornomagico.ntig.dev/',
+      githubURL: 'https://github.com/NTIG-Uppsala/JITS-pizzeria',
+    },
+
+    {
+      date: '2 Oct 2024',
+      title: 'NTB Biluthyrning',
+      descriptionHook: 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      descriptionLong:
+        'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit anim id est laborum.lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit anim id est laborum.',
+      tags: ['HBS', 'Business', 'Testing', 'Nested CSS'],
+      imagePath: 'assets/images/portfolio/group_projects/ntb_biluthyrning',
+      projectURL: 'https://ntbbiluthyrning.ntig.dev/',
+      githubURL: 'https://github.com/NTIG-Uppsala/TE4-VALE-Biluthyrning',
+    },
+
+    {
+      date: '15 Oct 2024',
+      title: 'Florista',
+      descriptionHook: 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      descriptionLong:
+        'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit anim id est laborum.lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit anim id est laborum.',
+      tags: ['Website', 'Design', 'HTML', 'CSS'],
+      imagePath: 'assets/images/portfolio/group_projects/florista',
+      projectURL: 'https://floristadev.ntig.dev/',
+      githubURL: 'https://github.com/NTIG-Uppsala/J.CAD-Florist',
+    },
   ];
 
   return (
