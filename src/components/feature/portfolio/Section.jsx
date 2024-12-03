@@ -1,5 +1,6 @@
 // ==================== IMPORTS ===============================================
 
+import BookmarkProvider from '../../../context/feature/portfolio/BookmarkProvider';
 import Category from './Category';
 import HorizontalLine from '../../global/common/HorizontalLine';
 
@@ -83,12 +84,14 @@ const Section = () => {
   return (
     // --------------------- JSX ------------------------------------------------
     <>
-      <section id="portfolio">
-        <h2 className="text-center font-serif text-5xl">My Journey</h2>
-        <Category title="Solo Projects" projects={soloProjects} />
-        <HorizontalLine />
-        <Category title="Group Projects" projects={groupProjects} />
-      </section>
+      <BookmarkProvider>
+        <section id="portfolio">
+          <h2 className="text-center font-serif text-5xl">My Journey</h2>
+          <Category title="Solo Projects" projects={soloProjects} />
+          <HorizontalLine />
+          <Category title="Group Projects" projects={groupProjects} />
+        </section>
+      </BookmarkProvider>
     </>
   );
 };

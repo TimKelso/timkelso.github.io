@@ -1,29 +1,29 @@
-// ==================== IMPORTS ===============================================
-
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { BookmarkUsage } from '../../../context/feature/portfolio/BookmarkUsage';
+import Bookmarks from './Bookmarks';
 import Image from './Image';
 import Button from './Button';
 import Tags from './Tags';
 import HorizontalLine from '../../global/common/HorizontalLine';
 
-// ==================== COMPONENT =============================================
-
-// --------------------- FUNCTIONS --------------------------------------------
-const toggleSaveProject = (title) => {
-  console.log(`Saved project: ${title}`);
-};
-
 const Project = ({ date, title, descriptionHook, descriptionLong, tags, imagePath, projectURL, githubURL }) => {
+  const projectId = `portfolio-${title.toLowerCase().replace(/\s+/g, '-')}`;
+  const { bookmarks, toggleBookmark } = BookmarkUsage();
+  const isBookmarked = bookmarks.some((bookmark) => bookmark.id === projectId);
   const [showMoreInfo, setShowMoreInfo] = useState(false);
 
-  const toggleMoreInfo = () => setShowMoreInfo(!showMoreInfo);
+  const scrollToProject = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
-  // --------------------- JSX ------------------------------------------------
   return (
     <>
       <HorizontalLine />
-      <article className="flex h-dvh flex-row justify-between">
+      <article id={projectId} className="flex h-dvh flex-row justify-between">
         <div id="timeline">vertical line</div>
 
         <div id="content" className="my-7 flex max-w-[31.25rem] flex-col gap-5">
@@ -44,16 +44,13 @@ const Project = ({ date, title, descriptionHook, descriptionLong, tags, imagePat
 
         <div id="action" className="flex flex-col justify-between">
           <div className="flex flex-col gap-1">
-            <Button icon="more_vert" onClick={() => console.log('Opened more buttons')} />
-            <Button icon="bookmarks" onClick={() => window.open(projectURL)} />
+            {/* <Button icon="more_vert" onClick={() => console.log('Opened more buttons')} /> */}
+            <Bookmarks onScrollToProject={scrollToProject} />
           </div>
+
           <div className="flex flex-col gap-1">
-            <Button icon="bookmark" label="Save" onClick={() => toggleSaveProject(title)} />
-            {!showMoreInfo ? (
-              <Button icon="info" label="Info" onClick={() => toggleMoreInfo()} />
-            ) : (
-              <Button icon="cancel" label="Info" onClick={() => toggleMoreInfo()} />
-            )}
+            <Button icon={isBookmarked ? 'bookmark_remove' : 'bookmark_add'} label="Save" onClick={() => toggleBookmark(projectId, title)} />
+            <Button icon={showMoreInfo ? 'cancel' : 'info'} label="Info" onClick={() => setShowMoreInfo((prev) => !prev)} />
             {githubURL && <Button icon="code" label="Code" onClick={() => window.open(githubURL, '_blank')} />}
             {projectURL && <Button icon="open_in_new" label="Open" onClick={() => window.open(projectURL, '_blank')} />}
           </div>
@@ -62,8 +59,6 @@ const Project = ({ date, title, descriptionHook, descriptionLong, tags, imagePat
     </>
   );
 };
-
-// ==================== PROP TYPES ============================================
 
 Project.propTypes = {
   date: PropTypes.string.isRequired,
@@ -75,7 +70,5 @@ Project.propTypes = {
   projectURL: PropTypes.string || null,
   githubURL: PropTypes.string || null,
 };
-
-// ==================== EXPORTS ===============================================
 
 export default Project;
