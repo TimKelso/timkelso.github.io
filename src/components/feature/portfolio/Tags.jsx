@@ -1,8 +1,4 @@
-// ==================== IMPORTS ===============================================
-
 import PropTypes from 'prop-types';
-
-// ==================== COMPONENT =============================================
 
 const Tags = ({ tags }) => {
   const tagColors = {
@@ -58,12 +54,8 @@ const Tags = ({ tags }) => {
   );
 };
 
-// ==================== PROP TYPES ============================================
-
 Tags.propTypes = {
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
-
-// ==================== EXPORTS ===============================================
 
 export default Tags;

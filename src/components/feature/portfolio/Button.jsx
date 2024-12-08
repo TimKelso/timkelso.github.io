@@ -1,8 +1,4 @@
-// ==================== IMPORTS ===============================================
-
 import PropTypes from 'prop-types';
-
-// ==================== COMPONENT =============================================
 
 const Button = ({ icon, label, onClick }) => (
   <button className="flex select-none flex-col items-center p-2" onClick={onClick} aria-label={label || icon}>
@@ -13,14 +9,10 @@ const Button = ({ icon, label, onClick }) => (
   </button>
 );
 
-// ==================== PROP TYPES ============================================
-
 Button.propTypes = {
   icon: PropTypes.string.isRequired,
   label: PropTypes.string || '',
   onClick: PropTypes.func.isRequired,
 };
-
-// ==================== EXPORTS ===============================================
 
 export default Button;

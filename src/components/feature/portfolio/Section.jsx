@@ -1,15 +1,8 @@
-// ==================== IMPORTS ===============================================
-
 import BookmarkProvider from '../../../context/feature/portfolio/BookmarkProvider';
-import Category from './Category';
-import HorizontalLine from '../../global/common/HorizontalLine';
-
-// ==================== COMPONENT =============================================
+import Project from './Project';
 
 const Section = () => {
-  // --------------------- DATA -----------------------------------------------
-
-  const soloProjects = [
+  const projects = [
     {
       date: '18 May 2023',
       title: 'Nebuline',
@@ -44,9 +37,6 @@ const Section = () => {
       supportsVariants: true,
       projectURL: 'https://xd.adobe.com/view/7581a416-7240-4b6a-87b3-922691013b3f-20d2',
     },
-  ];
-
-  const groupProjects = [
     {
       date: '10 Sep 2024',
       title: 'Il Forno Magico',
@@ -59,7 +49,6 @@ const Section = () => {
       projectURL: 'https://ilfornomagico.ntig.dev/',
       githubURL: 'https://github.com/NTIG-Uppsala/JITS-pizzeria',
     },
-
     {
       date: '2 Oct 2024',
       title: 'NTB Biluthyrning',
@@ -72,7 +61,6 @@ const Section = () => {
       projectURL: 'https://ntbbiluthyrning.ntig.dev/',
       githubURL: 'https://github.com/NTIG-Uppsala/TE4-VALE-Biluthyrning',
     },
-
     {
       date: '15 Oct 2024',
       title: 'Florista',
@@ -88,20 +76,15 @@ const Section = () => {
   ];
 
   return (
-    // --------------------- JSX ------------------------------------------------
-    <>
-      <BookmarkProvider>
-        <section id="portfolio">
-          <h2 className="text-center font-serif text-5xl">My Journey</h2>
-          <Category title="Solo Projects" projects={soloProjects} />
-          <HorizontalLine />
-          <Category title="Group Projects" projects={groupProjects} />
-        </section>
-      </BookmarkProvider>
-    </>
+    <BookmarkProvider>
+      <section id="portfolio">
+        <h2 className="text-center font-serif text-5xl">My Journey</h2>
+        {projects.map((project, index) => (
+          <Project key={index} {...project} />
+        ))}
+      </section>
+    </BookmarkProvider>
   );
 };
-
-// ==================== EXPORTS ===============================================
 
 export default Section;
