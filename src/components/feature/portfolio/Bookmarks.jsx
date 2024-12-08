@@ -23,8 +23,8 @@ const Bookmarks = ({ onScrollToProject }) => {
                     onScrollToProject(bookmark.id);
                   }}
                 >
-                  <span className="w-full truncate rounded-l-full bg-gray-900 py-3 pl-3 text-sm">{bookmark.title}</span>
-                  <i className="material-symbols-outlined rounded-r-full bg-gray-900 px-2 py-1 text-3xl">bookmark</i>
+                  <span className="w-full truncate rounded-l-full bg-gray-200 py-3 pl-3 text-sm dark:bg-gray-900">{bookmark.title}</span>
+                  <i className="material-symbols-outlined rounded-r-full bg-gray-200 px-2 py-1 text-3xl dark:bg-gray-900">bookmark</i>
                 </button>
               </li>
             ))
