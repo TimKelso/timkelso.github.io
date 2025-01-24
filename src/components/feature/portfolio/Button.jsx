@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 
 const Button = ({ icon, label, onClick }) => (
-  <button className="flex flex-col items-center p-2 select-none" onClick={onClick} aria-label={label || icon}>
-    <i className={`material-symbols-outlined text-3xl`} aria-hidden="true">
-      {icon}
+  <button className="flex cursor-pointer flex-col items-center p-2 select-none" onClick={onClick} aria-label={label || icon}>
+    <i className="material-symbols-outlined" aria-hidden="true">
+      <span className="text-3xl">{icon}</span>
     </i>
     {label && <p className="text-xs">{label}</p>}
   </button>

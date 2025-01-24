@@ -17,14 +17,16 @@ const Bookmarks = ({ onScrollToProject }) => {
             bookmarks.map((bookmark, index) => (
               <li key={index} className="mb-3">
                 <button
-                  className="flex items-center justify-self-end"
+                  className="flex cursor-pointer items-center justify-self-end"
                   onClick={() => {
                     setMenuVisible(false);
                     onScrollToProject(bookmark.id);
                   }}
                 >
                   <span className="w-full truncate rounded-l-full bg-gray-200 py-3 pl-3 text-sm dark:bg-gray-900">{bookmark.title}</span>
-                  <i className="material-symbols-outlined rounded-r-full bg-gray-200 px-2 py-1 text-3xl dark:bg-gray-900">bookmark</i>
+                  <i className="material-symbols-outlined rounded-r-full bg-gray-200 px-2 py-1 dark:bg-gray-900">
+                    <span className="text-3xl">bookmark</span>
+                  </i>
                 </button>
               </li>
             ))
