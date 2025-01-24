@@ -32,9 +32,9 @@ const Project = ({ date, title, descriptionHook, descriptionLong, tags, imagePat
             <h5 className="font-mono text-base tracking-widest text-gray-500">{date}</h5>
             <h4 className="text-3xl">{title}</h4>
             {!showMoreInfo ? (
-              <p className="truncate text-pretty text-base">{descriptionHook}</p>
+              <p className="truncate text-base text-pretty">{descriptionHook}</p>
             ) : (
-              <p className="truncate text-pretty text-base">
+              <p className="truncate text-base text-pretty">
                 {descriptionHook} {descriptionLong}
               </p>
             )}

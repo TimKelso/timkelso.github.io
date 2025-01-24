@@ -45,7 +45,7 @@ const Tags = ({ tags }) => {
       {tags.map((tag, index) => {
         const colorClass = tagColors[tag] || tagColors.Default;
         return (
-          <li key={index} className={`select-none rounded-full border-2 px-2 py-1 font-bold ${colorClass}`}>
+          <li key={index} className={`rounded-full border-2 px-2 py-1 font-bold select-none ${colorClass}`}>
             {tag}
           </li>
         );
