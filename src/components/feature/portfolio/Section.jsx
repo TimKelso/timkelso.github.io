@@ -4,6 +4,18 @@ import Project from './Project';
 const Section = () => {
   const projects = [
     {
+      date: '12 Dec 2024',
+      title: 'Point of Sale System',
+      descriptionHook: 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      descriptionLong:
+        'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit anim id est laborum.lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit anim id est laborum.',
+      tags: ['Business', 'App', 'C#', 'UX'],
+      imagePath: 'assets/images/portfolio/group_projects/pos_system',
+      supportsVariants: false,
+      projectURL: 'https://github.com/NTIG-Uppsala/Overkill-P.O.S/releases',
+      githubURL: 'https://github.com/NTIG-Uppsala/Overkill-P.O.S',
+    },
+    {
       date: '15 Oct 2024',
       title: 'Florista',
       descriptionHook: 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
