@@ -24,7 +24,9 @@ const Project = ({ date, title, descriptionHook, descriptionLong, tags, imagePat
     <>
       <HorizontalLine />
       <article id={projectId} className="flex h-dvh snap-start flex-row justify-between">
-        <div id="timeline">vertical line</div>
+        <div id="timeline" className="text-transparent">
+          vertical line
+        </div>
 
         <div id="content" className="my-7 flex max-w-[31.25rem] flex-col gap-5">
           {!showMoreInfo ? <Image imagePath={imagePath} alt={`Screenshot of ${title}`} supportsVariants={supportsVariants} /> : null}
