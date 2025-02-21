@@ -23,33 +23,35 @@ const Project = ({ date, title, descriptionHook, descriptionLong, tags, imagePat
   return (
     <>
       <HorizontalLine />
-      <article id={projectId} className="flex h-dvh snap-start flex-row justify-between">
+      <article
+        id={projectId}
+        className={showMoreInfo ? 'flex min-h-dvh snap-start flex-row justify-between' : 'flex h-dvh snap-start flex-row justify-between'}
+      >
         <div id="timeline" className="text-transparent">
           vertical line
         </div>
 
         <div id="content" className="my-7 flex max-w-[31.25rem] flex-col gap-5">
-          {!showMoreInfo ? <Image imagePath={imagePath} alt={`Screenshot of ${title}`} supportsVariants={supportsVariants} /> : null}
+          {showMoreInfo ? null : <Image imagePath={imagePath} alt={`Screenshot of ${title}`} supportsVariants={supportsVariants} />}
           <div className="flex h-full flex-col gap-3">
             <h5 className="font-mono text-base tracking-widest text-gray-500">{date}</h5>
             <h4 className="text-3xl">{title}</h4>
-            {!showMoreInfo ? (
-              <p className="truncate text-base text-pretty">{descriptionHook}</p>
-            ) : (
+            {showMoreInfo ? (
               <p className="truncate text-base text-pretty">
                 {descriptionHook} {descriptionLong}
               </p>
+            ) : (
+              <p className="truncate text-base text-pretty">{descriptionHook}</p>
             )}
             <Tags tags={tags} />
           </div>
         </div>
 
-        <div id="action" className="flex flex-col justify-between">
+        <div id="action" className="sticky top-0 flex h-dvh flex-col justify-between">
           <div className="flex flex-col gap-1">
-            {/* <Button icon="more_vert" onClick={() => console.log('Opened more buttons')} /> */}
+            {/* <Button icon="more_vert" onClick={() => console.log('Opened more buttons')} */}
             <Bookmarks onScrollToProject={scrollToProject} />
           </div>
-
           <div className="flex flex-col gap-1">
             <Button icon={isBookmarked ? 'bookmark_remove' : 'bookmark_add'} label="Save" onClick={() => toggleBookmark(projectId, title)} />
             <Button icon={showMoreInfo ? 'cancel' : 'info'} label="Info" onClick={() => setShowMoreInfo((prev) => !prev)} />
