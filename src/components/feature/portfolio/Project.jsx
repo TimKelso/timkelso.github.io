@@ -25,25 +25,28 @@ const Project = ({ date, title, descriptionHook, descriptionLong, tags, imagePat
       <HorizontalLine />
       <article
         id={projectId}
-        className={showMoreInfo ? 'flex min-h-dvh snap-start flex-row justify-between' : 'flex h-dvh snap-start flex-row justify-between'}
+        className={showMoreInfo ? 'flex min-h-dvh snap-start flex-row justify-between gap-1' : 'flex h-dvh snap-start flex-row justify-between gap-1'}
       >
         <div id="timeline" className="text-transparent">
           vertical line
         </div>
 
         <div id="content" className="my-7 flex max-w-[31.25rem] flex-col gap-5">
-          {showMoreInfo ? null : <Image imagePath={imagePath} alt={`Screenshot of ${title}`} supportsVariants={supportsVariants} />}
+          <Image imagePath={imagePath} alt={`Screenshot of ${title}`} supportsVariants={supportsVariants} />
           <div className="flex h-full flex-col gap-3">
             <h5 className="font-mono text-base tracking-widest text-gray-500">{date}</h5>
             <h4 className="text-3xl">{title}</h4>
+            <p className="truncate text-base text-pretty">{descriptionHook}</p>
             {showMoreInfo ? (
-              <p className="truncate text-base text-pretty">
-                {descriptionHook} {descriptionLong}
-              </p>
-            ) : (
-              <p className="truncate text-base text-pretty">{descriptionHook}</p>
-            )}
-            <Tags tags={tags} />
+              <div className="truncate text-base text-pretty">
+                {descriptionLong.map((paragraph, index) => (
+                  <p key={index} className="mb-3">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            ) : null}
+            {showMoreInfo ? null : <Tags tags={tags} />}
           </div>
         </div>
 
@@ -68,7 +71,7 @@ Project.propTypes = {
   date: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   descriptionHook: PropTypes.string.isRequired,
-  descriptionLong: PropTypes.string.isRequired,
+  descriptionLong: PropTypes.arrayOf(PropTypes.string).isRequired,
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
   imagePath: PropTypes.string.isRequired,
   supportsVariants: PropTypes.bool,
