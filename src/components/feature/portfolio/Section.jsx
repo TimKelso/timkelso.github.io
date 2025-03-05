@@ -50,9 +50,25 @@ const Section = () => {
     {
       date: '28 Apr 2024',
       title: "Sow 'n' Grow",
-      descriptionHook: 'A mockup for an app designed to bring the gardening community together.',
+      descriptionHook: 'A mockup for an app designed to bring the gardening community together, featuring IoT integration and plant scanning.',
       descriptionLong: [
-        '"Sow \'n\' Grow" is a mobile app mockup designed to foster a sense of community among gardening enthusiasts. The app concept centers around connecting individuals with a shared passion for gardening, offering a platform to share knowledge, experiences, and resources. The project was created using Adobe XD, a tool that allowed for the design of a visually appealing and interactive user interface.',
+        '"Sow \'n\' Grow" is a mobile app mockup designed to foster a sense of community among gardening enthusiasts. The app concept centers around connecting individuals with a shared passion for gardening, offering a platform to share knowledge, experiences, and resources. Developed using Adobe XD, this project was primarily an exercise in exploring mobile app design and user interface concepts.',
+
+        "The app's envisioned purpose was to be a helpful tool for plant enthusiasts, combining several potentially useful features. One concept was to integrate IoT (Internet of Things) functionality, allowing users to potentially manage connected devices like bonsai heat lamps or automated greenhouse roofs directly through the app interface.",
+
+        'Another planned feature was a community forum section, imagined as a space for gardening hobbyists and professionals to connect. Users could theoretically share photos of their plants, participate in discussions, and create polls related to gardening topics within this forum.',
+
+        "Additionally, the mockup included a plant scanning feature, inspired by tools like Google Lens. This function would, in theory, enable users to scan a plant using their phone's camera and receive detailed information. This information would encompass aspects like the plant's history, ideal watering schedules, sunlight preferences, nutritional needs, and suitable temperature ranges.",
+
+        'Lastly, a store section was designed, envisioned as a price comparison tool for gardening supplies. Rather than directly selling items, this feature would aggregate data from local stores to present users with cost-effective deals on gardening tools, seeds, flowers, and other related products. This shop concept aimed to help users find gardening resources efficiently.',
+
+        "The Sow 'n' Grow mockup is interactive to a limited degree, incorporating some basic animations within the Adobe XD environment. However, due to the nature of Adobe XD as a prototyping tool, the interactivity remains at a relatively fundamental level.",
+
+        "For me, the key learning outcome of this project was gaining initial experience with design principles and exploring the Adobe XD software for the first time. Working with Adobe's ecosystem, and specifically Adobe XD, was a new experience, and this project served as a hands-on introduction. I feel I developed a reasonable grasp of the software's basic functionalities through this design process.",
+
+        "As a design-focused school project, Sow 'n' Grow did not have any quantifiable real-world results. Its evaluation was based on fulfilling the assignment criteria and receiving a satisfactory grade. The intended audience within the fictional app context was broad, targeting anyone from amateur gardeners to more experienced horticultural professionals. However, in a practical sense, the audience for this project was, once again, primarily my instructor for assessment.",
+
+        "In summary, Sow 'n' Grow represents a foundational design exploration using Adobe XD, centered around a concept for a plant care mobile application. While remaining a conceptual mockup, it provided valuable experience in UI/UX design thinking and introduced me to the Adobe XD design environment.",
       ],
       tags: ['Design', 'Mobile', 'Adobe XD', 'Mockup', 'UI/UX', 'Solo Project'],
       imagePath: 'assets/images/portfolio/solo_projects/sow_n_grow',
