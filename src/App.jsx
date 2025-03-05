@@ -9,11 +9,11 @@ import HorizontalLine from './components/global/common/HorizontalLine';
 
 function App() {
   return (
-    <div>
+    <>
       <Section />
       <HorizontalLine />
       <Footer />
-    </div>
+    </>
   );
 }
 
