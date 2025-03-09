@@ -32,7 +32,7 @@ const Project = ({ date, title, descriptionHook, descriptionLong, tags, imagePat
         </div>
 
         <div id="content" className="my-7 flex max-w-[31.25rem] flex-col gap-5">
-          <Image imagePath={imagePath} alt={`Screenshot of ${title}`} supportsVariants={supportsVariants} />
+          <Image imagePath={imagePath} alt={`Screenshot of '${title}'`} supportsVariants={supportsVariants} />
           <div className="flex h-full flex-col gap-3">
             <h5 className="font-mono text-base tracking-widest text-gray-500">{date}</h5>
             <h4 className="text-3xl">{title}</h4>
