@@ -39,8 +39,25 @@ const Section = () => {
     {
       date: '10 Sep 2024',
       title: 'Il Forno Magico',
-      descriptionHook: 'descriptionHook',
-      descriptionLong: ['descriptionLong'],
+      descriptionHook:
+        'A website for a fictional Swedish pizzeria, featuring a menu and a dynamic photo carousel - this collaborative project was built using Bootstrap.',
+      descriptionLong: [
+        '"Il Forno Magico" (The Magic Oven) was a collaborative web development project focused on creating a website for a fictional Swedish pizzeria. This project served as a practical exercise in building a functional and visually appealing website within a team environment, utilizing the Bootstrap framework.',
+
+        "The primary goal of Il Forno Magico was to design a website that effectively showcased the fictional pizzeria's offerings. Since it was a school assignment rather than a commercial venture, the project didn't aim to solve a specific business problem but rather to provide a hands-on learning experience in web development and teamwork.",
+
+        "Key features of the website include a dynamic photo carousel on the homepage. This carousel was designed to automatically cycle through images, providing a visually engaging introduction to the pizzeria. Users also have the ability to manually navigate the carousel. The website also features a clearly presented menu, designed for easy readability, allowing potential customers to quickly browse the fictional pizzeria's offerings.",
+
+        'A significant aspect of this project was its responsive design, achieved through the use of Bootstrap utilities. This ensures that the website adapts effectively to different screen sizes, providing a consistent and user-friendly experience across various devices. The choice of Bootstrap as the primary framework streamlined the development process and facilitated the creation of a well-structured and responsive layout.',
+
+        'Beyond the front-end development, the project also incorporated Python for testing purposes. We developed testing scripts using the unittest module in conjunction with Selenium. These scripts were intended to automate testing of various website functionalities, providing a valuable introduction to software testing practices within a web development context.',
+
+        "As our first collaborative project, Il Forno Magico provided significant learning opportunities in teamwork and coordination. I was particularly proud of our team's ability to communicate and work together effectively to bring the website to fruition. This experience highlighted the importance of clear communication, task delegation, and collaborative problem-solving within a team setting. We followed a Scrum methodology, which involved daily stand-ups and regular sprint reviews with our instructor, providing a structured approach to our workflow.",
+
+        "The primary audience for Il Forno Magico was our instructor, who evaluated our work based on the specific requirements and learning objectives of the assignment. The project's success was therefore measured during our sprint reviews, where we presented our progress and received feedback.",
+
+        'In summary, Il Forno Magico represents a valuable collaborative learning experience in web development. Through this project, we gained practical experience in utilizing the Bootstrap framework for responsive design, implementing dynamic front-end features like a photo carousel and menu, and exploring software testing with Python. The collaborative nature of the project also provided crucial insights into effective teamwork and project management methodologies like Scrum.',
+      ],
       tags: ['Website', 'Design', 'Bootstrap', 'Python', 'Collaboration'],
       imagePath: 'assets/images/portfolio/group_projects/il_forno_magico',
       supportsVariants: false,
