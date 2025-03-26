@@ -30,7 +30,7 @@ function Footer() {
           </li>
         ))}
       </ul>
-      <p className="text-center font-sans text-pretty text-gray-500">&copy; 2024 Tim Kelso</p>
+      <p className="text-center font-sans text-pretty text-gray-500">&copy; {new Date().getFullYear()} Tim Kelso</p>
     </footer>
   );
 }
