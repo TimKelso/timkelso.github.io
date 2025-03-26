@@ -28,8 +28,29 @@ const Section = () => {
     {
       date: '2 Oct 2024',
       title: 'NTB Biluthyrning',
-      descriptionHook: 'descriptionHook',
-      descriptionLong: ['descriptionLong'],
+      descriptionHook:
+        'A UX friendly website for a fictional car rental company, with dynamic opening hours and a feature-rich car comparison table - this collaborative project was built using Handlebars.',
+      descriptionLong: [
+        '"NTB Biluthyrning" (NTB Car Rental) was a collaborative web development project aimed at creating a user-friendly website for a fictional swedish car rental company. The primary focus was on providing potential customers with easy access to essential information and a convenient tool for comparing available vehicles.',
+
+        "A key aspect of the website's design is its intuitive navigation. Users can easily select their desired car rental location - either Kiruna or Luleå - using a dropdown menu in the navigation bar. Additionally, another dropdown allows users to choose their preferred language from English, Swedish, and Finnish, catering to a potentially diverse user base.",
+
+        "The website also features dynamic opening hours, which adjust based on the selected location, the current day of the week, and the time of day. This functionality aims to provide users with accurate and up-to-date information regarding the rental company's operating hours for their chosen location.",
+
+        'A particularly feature-rich element of NTB Biluthyrning is the car comparison table. This table allows users to compare different car models based on various relevant criteria, including the car type, rental price, and year of manufacture. To enhance usability, the table includes interactive features such as the ability to sort the displayed cars by clicking on the column headers and a search bar that enables users to filter the table based on specific keywords.',
+
+        'Furthermore, the website incorporates a delivery service feature. Users can input their postal code to check the availability and cost of having a rental car delivered to their location, adding an extra layer of convenience. The entire website was designed to be fully responsive, ensuring a seamless and consistent user experience across a wide range of devices, from desktop computers to mobile phones.',
+
+        "The project utilized a variety of technologies to achieve its functionality. Handlebars was employed as the templating engine, enabling the dynamic generation of website content based on variables like location, time, and language. Standard HTML and CSS were used for structuring the website's content and applying styling, while JavaScript provided the necessary interactivity and dynamic content manipulation. For testing purposes, Python was used in conjunction with the Playwright library to automate tests of the website's various functionalities, ensuring a degree of reliability and quality. Additionally, nested CSS was implemented to provide a more organized and maintainable approach to styling the website's elements.",
+
+        'This project was undertaken collaboratively, following the Scrum methodology. Our team engaged in daily stand-up meetings to track progress and address any roadblocks, and we held weekly sprint reviews with our instructor to present our work and gather feedback. This structured approach facilitated effective teamwork and communication throughout the development process.',
+
+        "Personally, I found the dynamic capabilities of Handlebars particularly interesting, especially its potential for generating diverse static content based on different variables. I also gained valuable insights into the importance of thorough testing and learned how to implement automated testing using Python and the Playwright library. The collaborative nature of the project provided practical experience in working effectively within a team, coordinating tasks, and fostering clear communication. I was pleased with our team's ability to work together to realize the website's features.",
+
+        "As a school assignment, the primary audience for NTB Biluthyrning was our instructor, who evaluated our work against the project's requirements and learning objectives. The success of the project was ultimately assessed during our regular sprint reviews.",
+
+        'In conclusion, NTB Biluthyrning represents a comprehensive collaborative effort in web development. It provided practical experience in building a responsive website with dynamic features using technologies like Handlebars, JavaScript, and nested CSS. The project also underscored the importance of teamwork, project management using Scrum, and the implementation of automated testing using Python and Playwright.',
+      ],
       tags: ['HBS', 'Business', 'Testing', 'Nested CSS', 'Collaboration'],
       imagePath: 'assets/images/portfolio/group_projects/ntb_biluthyrning',
       supportsVariants: false,
