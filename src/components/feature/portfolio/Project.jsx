@@ -25,7 +25,11 @@ const Project = ({ date, title, descriptionHook, descriptionLong, tags, imagePat
       <HorizontalLine />
       <article
         id={projectId}
-        className={showMoreInfo ? 'flex min-h-dvh snap-start flex-row justify-between gap-1' : 'flex h-dvh snap-start flex-row justify-between gap-1'}
+        className={
+          showMoreInfo
+            ? 'flex min-h-dvh snap-start snap-always flex-row justify-between gap-1'
+            : 'flex h-dvh snap-start snap-always flex-row justify-between gap-1'
+        }
       >
         <div id="timeline" className="text-transparent">
           vertical line

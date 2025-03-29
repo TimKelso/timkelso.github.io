@@ -18,7 +18,7 @@ function Footer() {
   ];
 
   return (
-    <footer className="flex flex-col items-center gap-2 py-5 sm:flex-row-reverse sm:justify-between sm:px-9">
+    <footer className="flex snap-end flex-col items-center gap-2 py-5 sm:flex-row-reverse sm:justify-between sm:px-9">
       <ul className="flex w-full max-w-36 min-w-24 justify-between">
         {socialLinks.map((link, index) => (
           <li key={index}>
