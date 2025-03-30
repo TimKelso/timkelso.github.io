@@ -17,8 +17,25 @@ const Section = () => {
     {
       date: '15 Oct 2024',
       title: 'Florista',
-      descriptionHook: 'descriptionHook',
-      descriptionLong: ['descriptionLong'],
+      descriptionHook:
+        'A collaborative web development project for a fictional Swedish florist company. The website features a dynamic landing page and an interactive map.',
+      descriptionLong: [
+        '"Florista" is a web development project centered around creating a website for a fictional Swedish florist company. The aim of this project was to develop a platform that could effectively showcase the company\'s beautiful flower arrangements and provide essential information to potential customers. The website\'s design prioritizes visual appeal, with a strong emphasis on highlighting the natural beauty of flowers. The layout includes dedicated sections for showcasing various types of floral arrangements, and displaying contact details for inquiries and orders.',
+
+        "Upon landing on the homepage, users are greeted with an automatic slideshow. This feature is designed to immediately capture attention by showcasing a variety of the florist's creations, creating an engaging and visually welcoming experience. The website is also fully responsive, ensuring that it adapts seamlessly to different screen sizes, providing an optimal viewing experience whether accessed on a desktop computer or a mobile device. The overall design is clean and modern, utilizing a color palette intended to complement the floral theme and create a cohesive visual identity. The use of HTML and vanilla CSS for the website's implementation allows for a straightforward and maintainable codebase.",
+
+        "To enhance user convenience, the website features an interactive map that enables visitors to easily locate the nearest fictional Florista store. Additionally, the website incorporates dynamic opening hours. These hours automatically adjust based on the current day of the week and time, providing users with accurate and up-to-date information about the florist's operating schedule.",
+
+        "One particular feature I'm quite pleased with is the sleek navigation bar. It includes subtle hover effects on the individual links, adding a touch of interactivity. The navigation bar is also responsive and incorporates a dynamic behavior: it appears when the user scrolls up the page and disappears when scrolling down. It also intelligently senses when the mouse cursor approaches the top of the screen and will appear in response. This combination of features aims to create a smooth and intuitive navigation experience for website visitors.",
+
+        "This project was a collaborative effort, and our team utilized the Scrum methodology for managing our workflow. We held daily stand-up meetings to keep each other informed of our progress and to address any challenges that arose. Weekly sprint reviews with our instructor provided valuable opportunities to present our work, receive constructive feedback, and ensure that we were meeting the project's requirements. I was particularly proud of our team's ability to communicate effectively and work together cohesively throughout the entire project. We successfully translated our design vision into a functional website, and I personally gained valuable experience in the dynamics of collaboration and teamwork within a web development context.",
+
+        "The primary purpose of this project was to fulfill a school assignment. However, the intended audience for the fictional Florista website would be potential customers seeking floral arrangements for various occasions, such as weddings, birthdays, or other special events. The website aims to attract these customers and provide them with all the necessary information about Florista's offerings.",
+
+        "The project's success was evaluated based on how well it met the assignment's criteria and the overall quality of the final product. Our regular sprint reviews with our instructor served as the primary means of assessment, allowing for ongoing feedback and guidance throughout the development process.",
+
+        'In summary, Florista represents a collaborative web development project that successfully combines design aesthetics with practical functionality. It showcases the beauty of floral arrangements while providing users with essential information and features to enhance their experience. The project highlights the importance of teamwork, effective communication, and the application of web development principles in creating a visually appealing and user-friendly website.',
+      ],
       tags: ['Website', 'Design', 'HTML', 'CSS', 'Collaboration'],
       imagePath: 'assets/images/portfolio/group_projects/florista',
       supportsVariants: false,
