@@ -5,7 +5,7 @@ const Button = ({ icon, label, onClick }) => (
     <i className="material-symbols-outlined" aria-hidden="true">
       <span className="text-3xl">{icon}</span>
     </i>
-    {label && <p className="text-xs">{label}</p>}
+    {label && <p className="text-xs font-semibold">{label}</p>}
   </button>
 );
 
