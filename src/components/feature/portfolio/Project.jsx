@@ -37,11 +37,11 @@ const Project = ({ date, title, descriptionHook, descriptionLong, tags, imagePat
         <div className="flex h-full flex-col gap-3">
           <h5 className="font-mono text-base tracking-widest text-gray-500">{date}</h5>
           <h4 className="text-3xl">{title}</h4>
-          <p className="truncate text-base text-pretty">{descriptionHook}</p>
+          <p className="line-clamp-5 text-base text-pretty break-words">{descriptionHook}</p>
           {showMoreInfo ? (
-            <div className="truncate text-base text-pretty">
+            <div className="text-base text-pretty">
               {descriptionLong.map((paragraph, index) => (
-                <p key={index} className="mb-3">
+                <p key={index} className="mb-3 break-words">
                   {paragraph}
                 </p>
               ))}
