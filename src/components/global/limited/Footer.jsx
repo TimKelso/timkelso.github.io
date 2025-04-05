@@ -1,19 +1,23 @@
+import GitHub from '../../../assets/icons/GitHub';
+import Bluesky from '../../../assets/icons/Bluesky';
+import LinkedIn from '../../../assets/icons/LinkedIn';
+
 function Footer() {
   const socialLinks = [
     {
-      href: 'https://x.com',
-      ariaLabel: 'X/Twitter',
-      iconClass: 'fa-brands fa-twitter',
-    },
-    {
-      href: 'https://github.com',
+      href: 'https://github.com/TimKelso',
       ariaLabel: 'GitHub',
-      iconClass: 'fa-brands fa-github',
+      icon: <GitHub />,
     },
     {
-      href: 'https://linkedin.com',
+      href: 'https://timkelso.bsky.social',
+      ariaLabel: 'Bluesky',
+      icon: <Bluesky />,
+    },
+    {
+      href: 'https://linkedin.com/in/KelsoTim',
       ariaLabel: 'LinkedIn',
-      iconClass: 'fa-brands fa-linkedin-in',
+      icon: <LinkedIn />,
     },
   ];
 
@@ -23,8 +27,8 @@ function Footer() {
         {socialLinks.map((link, index) => (
           <li key={index}>
             <a href={link.href} aria-label={link.ariaLabel} className="group">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full text-gray-500 transition-colors group-focus:text-gray-700 group-active:bg-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:group-focus:text-gray-300 dark:group-active:bg-gray-700 dark:hover:bg-gray-900 dark:hover:text-gray-300">
-                <i className={`${link.iconClass} text-2xl`}></i>
+              <div className="flex h-10 w-10 items-center justify-center rounded-full text-gray-500 transition-colors group-focus:text-gray-700 group-active:bg-gray-300 hover:bg-gray-200 hover:text-gray-700 dark:group-focus:text-gray-300 dark:group-active:bg-gray-700 dark:hover:bg-gray-900 dark:hover:text-gray-300">
+                {link.icon}
               </div>
             </a>
           </li>
