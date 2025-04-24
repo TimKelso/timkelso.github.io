@@ -20,14 +20,7 @@ const Project = ({ date, title, descriptionHook, descriptionLong, tags, imagePat
   };
 
   return (
-    <article
-      id={projectId}
-      className={
-        showMoreInfo
-          ? 'flex min-h-dvh snap-start snap-always flex-row justify-between gap-1'
-          : 'flex h-dvh snap-start snap-always flex-row justify-between gap-1'
-      }
-    >
+    <article id={projectId} className="flex min-h-dvh snap-start snap-always flex-row justify-between gap-1">
       <div id="timeline" className="text-transparent">
         vertical line
       </div>
@@ -51,7 +44,7 @@ const Project = ({ date, title, descriptionHook, descriptionLong, tags, imagePat
         </div>
       </div>
 
-      <div id="action" className="sticky top-0 flex h-dvh flex-col justify-between">
+      <div id="action" className="sticky top-0 flex h-dvh min-h-fit flex-col justify-between">
         <div className="flex flex-col gap-1">
           {/* <Button icon="more_vert" onClick={() => console.log('Opened more buttons')} */}
           <Bookmarks onScrollToProject={scrollToProject} />
