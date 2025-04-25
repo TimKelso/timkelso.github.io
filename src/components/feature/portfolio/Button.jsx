@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 const Button = ({ icon, label, onClick }) => (
-  <button className="flex cursor-pointer flex-col items-center p-2 select-none" onClick={onClick} aria-label={label || icon}>
+  <button className="flex cursor-pointer flex-col p-2 select-none" onClick={onClick} aria-label={label || icon}>
     <i className="material-symbols-outlined" aria-hidden="true">
       <span className="text-3xl">{icon}</span>
     </i>

@@ -15,9 +15,9 @@ const Bookmarks = ({ onScrollToProject }) => {
         <ul className="absolute right-0 select-none">
           {bookmarks.length > 0 ? (
             bookmarks.map((bookmark, index) => (
-              <li key={index} className="mb-3">
+              <li key={index} className="mr-2 mb-3 flex justify-end">
                 <button
-                  className="flex cursor-pointer items-center justify-self-end"
+                  className="flex cursor-pointer"
                   onClick={() => {
                     setMenuVisible(false);
                     onScrollToProject(bookmark.id);
