@@ -21,11 +21,9 @@ const Project = ({ date, title, descriptionHook, descriptionLong, tags, imagePat
 
   return (
     <article id={projectId} className="flex min-h-dvh snap-start snap-always flex-row justify-between gap-1">
-      <div id="timeline" className="text-transparent">
-        vertical line
-      </div>
+      <div id="timeline" className="flex w-12"></div>
 
-      <div id="content" className="my-7 flex max-w-prose flex-col gap-5">
+      <div id="content" className="my-7 flex max-w-prose flex-1 flex-col gap-5">
         <Image imagePath={imagePath} alt={`Screenshot of '${title}'`} supportsVariants={supportsVariants} />
         <div className="flex h-full flex-col gap-3">
           <h5 className="font-mono text-base tracking-widest text-gray-500">{date}</h5>
@@ -44,7 +42,7 @@ const Project = ({ date, title, descriptionHook, descriptionLong, tags, imagePat
         </div>
       </div>
 
-      <div id="action" className="sticky top-0 flex h-dvh min-h-fit flex-col justify-between">
+      <div id="action" className="sticky top-0 flex h-dvh min-h-fit w-12 flex-col items-end justify-between">
         <div className="flex flex-col gap-1">
           {/* <Button icon="more_vert" onClick={() => console.log('Opened more buttons')} */}
           <Bookmarks onScrollToProject={scrollToProject} />
