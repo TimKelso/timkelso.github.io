@@ -1,4 +1,3 @@
-
 interface TagsProps {
   tags: string[];
 }
