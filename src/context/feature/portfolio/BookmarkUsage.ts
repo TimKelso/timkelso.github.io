@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import { BookmarkContext } from './BookmarkContext';
+import { BookmarkContext, BookmarkContextType } from './BookmarkContext';
 
-export const BookmarkUsage = () => {
+export const BookmarkUsage = (): BookmarkContextType => {
   const context = useContext(BookmarkContext);
 
   if (!context) {

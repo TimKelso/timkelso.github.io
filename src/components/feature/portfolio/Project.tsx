@@ -1,18 +1,39 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import { BookmarkUsage } from '../../../context/feature/portfolio/BookmarkUsage';
 import Bookmarks from './Bookmarks';
 import Image from './Image';
 import Button from './Button';
 import Tags from './Tags';
 
-const Project = ({ date, title, descriptionHook, descriptionLong, tags, imagePath, supportsVariants, projectURL, githubURL }) => {
+interface ProjectProps {
+  date: string;
+  title: string;
+  descriptionHook: string;
+  descriptionLong: string[];
+  tags: string[];
+  imagePath: string;
+  supportsVariants?: boolean;
+  projectURL?: string | null;
+  githubURL?: string | null;
+}
+
+const Project = ({
+  date,
+  title,
+  descriptionHook,
+  descriptionLong,
+  tags,
+  imagePath,
+  supportsVariants,
+  projectURL,
+  githubURL,
+}: ProjectProps): JSX.Element => {
   const projectId = `portfolio-${title.toLowerCase().replace(/\s+/g, '-')}`;
   const { bookmarks, toggleBookmark } = BookmarkUsage();
   const isBookmarked = bookmarks.some((bookmark) => bookmark.id === projectId);
   const [showMoreInfo, setShowMoreInfo] = useState(false);
 
-  const scrollToProject = (id) => {
+  const scrollToProject = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -58,18 +79,6 @@ const Project = ({ date, title, descriptionHook, descriptionLong, tags, imagePat
       </div>
     </article>
   );
-};
-
-Project.propTypes = {
-  date: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  descriptionHook: PropTypes.string.isRequired,
-  descriptionLong: PropTypes.arrayOf(PropTypes.string).isRequired,
-  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-  imagePath: PropTypes.string.isRequired,
-  supportsVariants: PropTypes.bool,
-  projectURL: PropTypes.string || null,
-  githubURL: PropTypes.string || null,
 };
 
 export default Project;

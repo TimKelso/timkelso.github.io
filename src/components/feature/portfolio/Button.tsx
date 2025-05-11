@@ -1,6 +1,12 @@
-import PropTypes from 'prop-types';
+import React from 'react';
 
-const Button = ({ icon, label, onClick }) => (
+interface ButtonProps {
+  icon: string;
+  label?: string;
+  onClick: () => void;
+}
+
+const Button = ({ icon, label, onClick }: ButtonProps): JSX.Element => (
   <button className="flex cursor-pointer flex-col p-2 select-none" onClick={onClick} aria-label={label || icon}>
     <i className="material-symbols-outlined" aria-hidden="true">
       <span className="text-3xl">{icon}</span>
@@ -8,11 +14,5 @@ const Button = ({ icon, label, onClick }) => (
     {label && <p className="text-xs font-semibold">{label}</p>}
   </button>
 );
-
-Button.propTypes = {
-  icon: PropTypes.string.isRequired,
-  label: PropTypes.string || '',
-  onClick: PropTypes.func.isRequired,
-};
 
 export default Button;

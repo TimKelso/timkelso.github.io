@@ -1,14 +1,17 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
-import { BookmarkContext } from './BookmarkContext';
+import React, { useState, ReactNode } from 'react';
+import { BookmarkContext, Bookmark } from './BookmarkContext';
 
-const BookmarkProvider = ({ children }) => {
-  const [bookmarks, setBookmarks] = useState(() => {
+interface BookmarkProviderProps {
+  children: ReactNode;
+}
+
+const BookmarkProvider = ({ children }: BookmarkProviderProps): JSX.Element => {
+  const [bookmarks, setBookmarks] = useState<Bookmark[]>(() => {
     const savedBookmarks = localStorage.getItem('bookmarks');
     return savedBookmarks ? JSON.parse(savedBookmarks) : [];
   });
 
-  const toggleBookmark = (id, title) => {
+  const toggleBookmark = (id: string, title: string) => {
     const isBookmarked = bookmarks.some((bookmark) => bookmark.id === id);
     const updatedBookmarks = isBookmarked ? bookmarks.filter((bookmark) => bookmark.id !== id) : [...bookmarks, { id, title }];
 
@@ -17,10 +20,6 @@ const BookmarkProvider = ({ children }) => {
   };
 
   return <BookmarkContext.Provider value={{ bookmarks, toggleBookmark }}>{children}</BookmarkContext.Provider>;
-};
-
-BookmarkProvider.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
 export default BookmarkProvider;

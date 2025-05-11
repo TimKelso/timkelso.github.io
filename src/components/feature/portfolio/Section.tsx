@@ -1,7 +1,8 @@
+import React from 'react';
 import BookmarkProvider from '../../../context/feature/portfolio/BookmarkProvider';
 import Project from './Project';
 
-const Section = () => {
+const Section = (): JSX.Element => {
   const projects = [
     {
       date: '12 Dec 2024',

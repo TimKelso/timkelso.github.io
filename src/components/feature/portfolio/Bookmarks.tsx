@@ -1,9 +1,12 @@
-import PropTypes from 'prop-types';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { BookmarkUsage } from '../../../context/feature/portfolio/BookmarkUsage';
 import Button from './Button';
 
-const Bookmarks = ({ onScrollToProject }) => {
+interface BookmarksProps {
+  onScrollToProject: (id: string) => void;
+}
+
+const Bookmarks = ({ onScrollToProject }: BookmarksProps): JSX.Element => {
   const { bookmarks } = BookmarkUsage();
   const [menuVisible, setMenuVisible] = useState(false);
 
@@ -40,10 +43,6 @@ const Bookmarks = ({ onScrollToProject }) => {
       )}
     </div>
   );
-};
-
-Bookmarks.propTypes = {
-  onScrollToProject: PropTypes.func.isRequired,
 };
 
 export default Bookmarks;

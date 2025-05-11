@@ -1,9 +1,16 @@
+import React from 'react';
 import GitHub from '../../../assets/icons/GitHub';
 import Bluesky from '../../../assets/icons/Bluesky';
 import LinkedIn from '../../../assets/icons/LinkedIn';
 
-function Footer() {
-  const socialLinks = [
+interface SocialLink {
+  href: string;
+  ariaLabel: string;
+  icon: JSX.Element;
+}
+
+function Footer(): JSX.Element {
+  const socialLinks: SocialLink[] = [
     {
       href: 'https://github.com/TimKelso',
       ariaLabel: 'GitHub',

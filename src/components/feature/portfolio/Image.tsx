@@ -1,7 +1,13 @@
-import PropTypes from 'prop-types';
+import React from 'react';
 
-const Image = ({ imagePath, alt, supportsVariants = false }) => {
-  const getImageSrc = (mode, ext) => (supportsVariants ? `${imagePath}/${mode}/img.${ext}` : `${imagePath}/img.${ext}`);
+interface ImageProps {
+  imagePath: string;
+  alt: string;
+  supportsVariants?: boolean;
+}
+
+const Image = ({ imagePath, alt, supportsVariants = false }: ImageProps): JSX.Element => {
+  const getImageSrc = (mode: string, ext: string) => (supportsVariants ? `${imagePath}/${mode}/img.${ext}` : `${imagePath}/img.${ext}`);
 
   const imgClasses = 'rounded-xl max-h-[40svh]';
   const blurImgClasses = 'rounded-xl max-h-[40svh] inset-0 absolute -z-1 scale-90 blur-3xl saturate-200';
@@ -34,12 +40,6 @@ const Image = ({ imagePath, alt, supportsVariants = false }) => {
       )}
     </div>
   );
-};
-
-Image.propTypes = {
-  imagePath: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
-  supportsVariants: PropTypes.bool,
 };
 
 export default Image;

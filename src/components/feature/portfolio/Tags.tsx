@@ -1,7 +1,11 @@
-import PropTypes from 'prop-types';
+import React from 'react';
 
-const Tags = ({ tags }) => {
-  const tagColors = {
+interface TagsProps {
+  tags: string[];
+}
+
+const Tags = ({ tags }: TagsProps): JSX.Element => {
+  const tagColors: { [key: string]: string } = {
     Website: 'text-red-600 border-red-600 dark:text-red-800 dark:border-red-800',
     Bootsrap: 'text-red-600 border-red-600 dark:text-red-800 dark:border-red-800',
 
@@ -52,10 +56,6 @@ const Tags = ({ tags }) => {
       })}
     </ul>
   );
-};
-
-Tags.propTypes = {
-  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Tags;
