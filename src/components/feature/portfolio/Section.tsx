@@ -1,4 +1,3 @@
-import React from 'react';
 import BookmarkProvider from '../../../context/feature/portfolio/BookmarkProvider';
 import Project from './Project';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import GitHub from '../../../assets/icons/GitHub';
 import Bluesky from '../../../assets/icons/Bluesky';
 import LinkedIn from '../../../assets/icons/LinkedIn';
