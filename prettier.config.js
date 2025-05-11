@@ -7,4 +7,10 @@ export default {
   trailingComma: 'all',
   bracketSpacing: true,
   endOfLine: 'lf',
+  overrides: [
+    {
+      files: '.husky/*',
+      options: { parser: 'sh' },
+    },
+  ],
 };
