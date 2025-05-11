@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { BookmarkUsage } from '../../../context/feature/portfolio/BookmarkUsage';
 import Bookmarks from './Bookmarks';
 import Image from './Image';
