@@ -3,7 +3,7 @@ import { BookmarkUsage } from '../../../context/feature/portfolio/BookmarkUsage'
 import Button from './Button';
 
 interface BookmarksProps {
-  onScrollToProject: (id: string) => void;
+  onScrollToProject: (_id: string) => void;
 }
 
 const Bookmarks = ({ onScrollToProject }: BookmarksProps): JSX.Element => {

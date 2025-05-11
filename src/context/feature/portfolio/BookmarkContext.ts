@@ -7,7 +7,7 @@ export interface Bookmark {
 
 export interface BookmarkContextType {
   bookmarks: Bookmark[];
-  toggleBookmark: (id: string, title: string) => void;
+  toggleBookmark: (_id: string, _title: string) => void;
 }
 
 export const BookmarkContext = createContext<BookmarkContextType | undefined>(undefined);
