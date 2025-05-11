@@ -1,5 +1,5 @@
 export default {
-  plugins: ['prettier-plugin-tailwindcss'],
+  plugins: ['prettier-plugin-sh', 'prettier-plugin-tailwindcss'],
   printWidth: 150,
   tabWidth: 2,
   semi: true,
