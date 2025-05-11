@@ -1,0 +1,28 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "Running pre-push checks..."
+
+echo "1. Linting entire project..."
+npm run lint
+if [ $? -ne 0 ]; then
+  echo "Linting failed. Aborting push."
+  exit 1
+fi
+
+echo "2. Checking formatting for entire project..."
+npx prettier --check .
+if [ $? -ne 0 ]; then
+  echo "Formatting check failed. Run 'npm run format' to fix. Aborting push."
+  exit 1
+fi
+
+echo "3. Building project..."
+npm run build
+if [ $? -ne 0 ]; then
+  echo "Build failed. Aborting push."
+  exit 1
+fi
+
+echo "All pre-push checks passed!"
+exit 0
