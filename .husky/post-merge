@@ -1,0 +1,8 @@
+if git diff HEAD@{1} HEAD --name-only --exit-code --quiet -- package-lock.json; then
+  echo "Husky post-merge: package-lock.json not changed. Skipping npm install."
+else
+  echo "Husky post-merge: package-lock.json changed. Running npm install..."
+  npm install
+fi
+
+exit 0
