@@ -1,6 +1,6 @@
-import Footer from './components/global/limited/Footer';
-import Section from './components/feature/portfolio/Section';
-import HorizontalLine from './components/global/common/HorizontalLine';
+import Footer from './components/organisms/Footer';
+import Section from './components/organisms/PortfolioSection';
+import HorizontalLine from './components/atoms/HorizontalLine';
 
 function App() {
   return (

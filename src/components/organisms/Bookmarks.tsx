@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { BookmarkUsage } from '../../../context/feature/portfolio/BookmarkUsage';
-import Button from './Button';
+import { BookmarkUsage } from '../../context/feature/portfolio/BookmarkUsage';
+import Button from '../atoms/Button';
 
 interface BookmarksProps {
   onScrollToProject: (_id: string) => void;

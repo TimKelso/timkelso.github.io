@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { BookmarkUsage } from '../../../context/feature/portfolio/BookmarkUsage';
+import { BookmarkUsage } from '../../context/feature/portfolio/BookmarkUsage';
 import Bookmarks from './Bookmarks';
-import Image from './Image';
-import Button from './Button';
-import Tags from './Tags';
+import Image from '../atoms/Image';
+import Button from '../atoms/Button';
+import Tags from '../molecules/Tags';
 
 interface ProjectProps {
   date: string;

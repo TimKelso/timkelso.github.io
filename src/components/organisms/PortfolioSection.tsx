@@ -1,5 +1,5 @@
-import BookmarkProvider from '../../../context/feature/portfolio/BookmarkProvider';
-import Project from './Project';
+import BookmarkProvider from '../../context/feature/portfolio/BookmarkProvider';
+import Project from './PortfolioProject';
 
 const Section = (): JSX.Element => {
   const projects = [

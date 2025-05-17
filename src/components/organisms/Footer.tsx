@@ -1,6 +1,6 @@
-import GitHub from '../../../assets/icons/GitHub';
-import Bluesky from '../../../assets/icons/Bluesky';
-import LinkedIn from '../../../assets/icons/LinkedIn';
+import GitHub from '../atoms/icons/GitHub';
+import Bluesky from '../atoms/icons/Bluesky';
+import LinkedIn from '../atoms/icons/LinkedIn';
 
 interface SocialLink {
   href: string;
