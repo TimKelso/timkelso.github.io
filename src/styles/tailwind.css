@@ -1,9 +1,107 @@
 @import 'tailwindcss';
 
-@custom-variant dark (@media (prefers-color-scheme: dark));
+/* Light mode */
+:root {
+  /* Base Colors */
+  --default-background-color: oklch(1 0 0);
+  --default-foreground-color: oklch(1 0 0);
+  --surface-background-color: oklch(1 0 0);
+  --surface-foreground-color: oklch(1 0 0);
 
-@theme {
-  --font-sans: Noto Sans, sans-serif;
-  --font-serif: Noto Serif, serif;
-  --font-mono: Noto Mono, monospace;
+  /* Semantic Colors */
+  --primary-background-color: oklch(1 0 0);
+  --primary-foreground-color: oklch(1 0 0);
+  --secondary-background-color: oklch(1 0 0);
+  --secondary-foreground-color: oklch(1 0 0);
+  --tertiary-background-color: oklch(1 0 0);
+  --tertiary-foreground-color: oklch(1 0 0);
+
+  /* Feedback Colors */
+  --success-background-color: oklch(1 0 0);
+  --success-foreground-color: oklch(1 0 0);
+  --error-background-color: oklch(1 0 0);
+  --error-foreground-color: oklch(1 0 0);
+  --warning-background-color: oklch(1 0 0);
+  --warning-foreground-color: oklch(1 0 0);
+  --info-background-color: oklch(1 0 0);
+  --info-foreground-color: oklch(1 0 0);
+
+  /* Borders and Rings */
+  --border-color: oklch(1 0 0);
+  --ring-color: oklch(1 0 0);
+}
+
+/* Dark mode */
+.dark {
+  /* Base Colors */
+  --default-background-color: oklch(0 0 0);
+  --default-foreground-color: oklch(0 0 0);
+  --surface-background-color: oklch(0 0 0);
+  --surface-foreground-color: oklch(0 0 0);
+
+  /* Semantic Colors */
+  --primary-background-color: oklch(0 0 0);
+  --primary-foreground-color: oklch(0 0 0);
+  --secondary-background-color: oklch(0 0 0);
+  --secondary-foreground-color: oklch(0 0 0);
+  --tertiary-background-color: oklch(0 0 0);
+  --tertiary-foreground-color: oklch(0 0 0);
+
+  /* Feedback Colors */
+  --success-background-color: oklch(0 0 0);
+  --success-foreground-color: oklch(0 0 0);
+  --error-background-color: oklch(0 0 0);
+  --error-foreground-color: oklch(0 0 0);
+  --warning-background-color: oklch(0 0 0);
+  --warning-foreground-color: oklch(0 0 0);
+  --info-background-color: oklch(0 0 0);
+  --info-foreground-color: oklch(0 0 0);
+
+  /* Borders and Rings */
+  --border-color: oklch(0 0 0);
+  --ring-color: oklch(0 0 0);
+}
+
+/*
+  Map the semantic CSS variables to Tailwind's theme variables.
+  The `inline` option ensures that Tailwind uses the `var()` references directly,
+  allowing the values to change based on the :root or .dark context.
+*/
+
+/* Tailwind CSS */
+@theme inline {
+  /* Font Families */
+  --font-family-sans: Noto Sans, sans-serif;
+  --font-family-serif: Noto Serif, serif;
+  --font-family-mono: Noto Mono, monospace;
+
+  /* ------------------------- */
+
+  /* Base Colors */
+  --color-background: var(--default-background-color);
+  --color-foreground: var(--default-foreground-color);
+  --color-surface-background: var(--surface-background-color);
+  --color-surface-foreground: var(--surface-foreground-color);
+
+  /* Semantic Colors */
+  --color-primary-background: var(--primary-background-color);
+  --color-primary-foreground: var(--primary-foreground-color);
+  --color-secondary-background: var(--secondary-background-color);
+  --color-secondary-foreground: var(--secondary-foreground-color);
+  --color-tertiary-background: var(--tertiary-background-color);
+  --color-tertiary-foreground: var(--tertiary-foreground-color);
+
+  /* Feedback Colors */
+  --color-success-background: var(--success-background-color);
+  --color-success-foreground: var(--success-foreground-color);
+  --color-error-background: var(--error-background-color);
+  --color-error-foreground: var(--error-foreground-color);
+  --color-warning-background: var(--warning-background-color);
+  --color-warning-foreground: var(--warning-foreground-color);
+  --color-info-background: var(--info-background-color);
+  --color-info-foreground: var(--info-foreground-color);
+
+  /* Borders and Rings */
+  --color-border: var(--border-color);
+  --color-ring: var(--ring-color);
 }
