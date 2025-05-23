@@ -1,5 +1,5 @@
 function HorizontalLine(): JSX.Element {
-  return <hr className="border-gray-200 dark:border-gray-800" />;
+  return <hr className="border-border" />;
 }
 
 export default HorizontalLine;

@@ -33,14 +33,14 @@ function Footer(): JSX.Element {
         {socialLinks.map((link, index) => (
           <li key={index}>
             <a href={link.href} aria-label={link.ariaLabel} className="group">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full text-gray-500 transition-colors group-focus:text-gray-700 group-active:bg-gray-300 hover:bg-gray-200 hover:text-gray-700 dark:group-focus:text-gray-300 dark:group-active:bg-gray-700 dark:hover:bg-gray-900 dark:hover:text-gray-300">
+              <div className="text-secondary-fg/75 group-focus:text-secondary-fg/90 hover:text-secondary-fg/90 group-active:bg-secondary-fg/50 hover:bg-secondary-fg/25 flex h-10 w-10 items-center justify-center rounded-full transition-colors">
                 {link.icon}
               </div>
             </a>
           </li>
         ))}
       </ul>
-      <p className="text-center font-sans text-pretty text-gray-500">&copy; {new Date().getFullYear()} Tim Kelso</p>
+      <p className="text-secondary-fg/75 text-center font-sans text-pretty">&copy; {new Date().getFullYear()} Tim Kelso</p>
     </footer>
   );
 }

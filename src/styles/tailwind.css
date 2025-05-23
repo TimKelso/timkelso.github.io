@@ -14,15 +14,15 @@
   :root {
     /* Base Colors */
     --default-background-color: oklch(1 0 0);
-    --default-foreground-color: oklch(1 0 0);
+    --default-foreground-color: oklch(0 0 0);
     --surface-background-color: oklch(1 0 0);
-    --surface-foreground-color: oklch(1 0 0);
+    --surface-foreground-color: oklch(0 0 0);
 
     /* Semantic Colors */
-    --primary-background-color: oklch(1 0 0);
+    --primary-background-color: oklch(0 0 0);
     --primary-foreground-color: oklch(1 0 0);
-    --secondary-background-color: oklch(1 0 0);
-    --secondary-foreground-color: oklch(1 0 0);
+    --secondary-background-color: oklch(0.7 0 0);
+    --secondary-foreground-color: oklch(0.3 0 0);
     --tertiary-background-color: oklch(1 0 0);
     --tertiary-foreground-color: oklch(1 0 0);
 
@@ -37,8 +37,8 @@
     --info-foreground-color: oklch(1 0 0);
 
     /* Borders and Rings */
-    --border-color: oklch(1 0 0);
-    --ring-color: oklch(1 0 0);
+    --border-color: oklch(0.5 0 0);
+    --ring-color: oklch(0.5 0 0);
   }
 }
 
@@ -47,15 +47,15 @@
   :root {
     /* Base Colors */
     --default-background-color: oklch(0 0 0);
-    --default-foreground-color: oklch(0 0 0);
+    --default-foreground-color: oklch(0.9 0 0);
     --surface-background-color: oklch(0 0 0);
-    --surface-foreground-color: oklch(0 0 0);
+    --surface-foreground-color: oklch(0.9 0 0);
 
     /* Semantic Colors */
-    --primary-background-color: oklch(0 0 0);
+    --primary-background-color: oklch(0.9 0 0);
     --primary-foreground-color: oklch(0 0 0);
-    --secondary-background-color: oklch(0 0 0);
-    --secondary-foreground-color: oklch(0 0 0);
+    --secondary-background-color: oklch(0.3 0 0);
+    --secondary-foreground-color: oklch(0.7 0 0);
     --tertiary-background-color: oklch(0 0 0);
     --tertiary-foreground-color: oklch(0 0 0);
 
@@ -70,16 +70,10 @@
     --info-foreground-color: oklch(0 0 0);
 
     /* Borders and Rings */
-    --border-color: oklch(0 0 0);
-    --ring-color: oklch(0 0 0);
+    --border-color: oklch(0.5 0 0);
+    --ring-color: oklch(0.5 0 0);
   }
 }
-
-/*
-  Map the semantic CSS variables to Tailwind's theme variables.
-  The `inline` option ensures that Tailwind uses the `var()` references directly,
-  allowing the values to change based on the :root or .dark context.
-*/
 
 /* Tailwind CSS */
 @theme inline {
