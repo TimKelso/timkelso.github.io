@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import './fonts.css';
 
 /* Light mode */
 :root {
@@ -71,11 +72,9 @@
 /* Tailwind CSS */
 @theme inline {
   /* Font Families */
-  --font-family-sans: Noto Sans, sans-serif;
-  --font-family-serif: Noto Serif, serif;
-  --font-family-mono: Noto Mono, monospace;
-
-  /* ------------------------- */
+  --font-sans: 'Noto Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif: 'Noto Serif Display', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-mono: 'Noto Sans Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 
   /* Base Colors */
   --color-background: var(--default-background-color);
