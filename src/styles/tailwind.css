@@ -1,66 +1,78 @@
 @import 'tailwindcss';
 @import './fonts.css';
 
-/* Light mode */
+/* Always active */
 :root {
-  /* Base Colors */
-  --default-background-color: oklch(1 0 0);
-  --default-foreground-color: oklch(1 0 0);
-  --surface-background-color: oklch(1 0 0);
-  --surface-foreground-color: oklch(1 0 0);
+  /* Font Families */
+  --font-family-sans: 'Noto Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-family-serif: 'Noto Serif Display', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-family-mono: 'Noto Sans Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
 
-  /* Semantic Colors */
-  --primary-background-color: oklch(1 0 0);
-  --primary-foreground-color: oklch(1 0 0);
-  --secondary-background-color: oklch(1 0 0);
-  --secondary-foreground-color: oklch(1 0 0);
-  --tertiary-background-color: oklch(1 0 0);
-  --tertiary-foreground-color: oklch(1 0 0);
+/* Light mode */
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Base Colors */
+    --default-background-color: oklch(1 0 0);
+    --default-foreground-color: oklch(1 0 0);
+    --surface-background-color: oklch(1 0 0);
+    --surface-foreground-color: oklch(1 0 0);
 
-  /* Feedback Colors */
-  --success-background-color: oklch(1 0 0);
-  --success-foreground-color: oklch(1 0 0);
-  --error-background-color: oklch(1 0 0);
-  --error-foreground-color: oklch(1 0 0);
-  --warning-background-color: oklch(1 0 0);
-  --warning-foreground-color: oklch(1 0 0);
-  --info-background-color: oklch(1 0 0);
-  --info-foreground-color: oklch(1 0 0);
+    /* Semantic Colors */
+    --primary-background-color: oklch(1 0 0);
+    --primary-foreground-color: oklch(1 0 0);
+    --secondary-background-color: oklch(1 0 0);
+    --secondary-foreground-color: oklch(1 0 0);
+    --tertiary-background-color: oklch(1 0 0);
+    --tertiary-foreground-color: oklch(1 0 0);
 
-  /* Borders and Rings */
-  --border-color: oklch(1 0 0);
-  --ring-color: oklch(1 0 0);
+    /* Feedback Colors */
+    --success-background-color: oklch(1 0 0);
+    --success-foreground-color: oklch(1 0 0);
+    --error-background-color: oklch(1 0 0);
+    --error-foreground-color: oklch(1 0 0);
+    --warning-background-color: oklch(1 0 0);
+    --warning-foreground-color: oklch(1 0 0);
+    --info-background-color: oklch(1 0 0);
+    --info-foreground-color: oklch(1 0 0);
+
+    /* Borders and Rings */
+    --border-color: oklch(1 0 0);
+    --ring-color: oklch(1 0 0);
+  }
 }
 
 /* Dark mode */
-.dark {
-  /* Base Colors */
-  --default-background-color: oklch(0 0 0);
-  --default-foreground-color: oklch(0 0 0);
-  --surface-background-color: oklch(0 0 0);
-  --surface-foreground-color: oklch(0 0 0);
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Base Colors */
+    --default-background-color: oklch(0 0 0);
+    --default-foreground-color: oklch(0 0 0);
+    --surface-background-color: oklch(0 0 0);
+    --surface-foreground-color: oklch(0 0 0);
 
-  /* Semantic Colors */
-  --primary-background-color: oklch(0 0 0);
-  --primary-foreground-color: oklch(0 0 0);
-  --secondary-background-color: oklch(0 0 0);
-  --secondary-foreground-color: oklch(0 0 0);
-  --tertiary-background-color: oklch(0 0 0);
-  --tertiary-foreground-color: oklch(0 0 0);
+    /* Semantic Colors */
+    --primary-background-color: oklch(0 0 0);
+    --primary-foreground-color: oklch(0 0 0);
+    --secondary-background-color: oklch(0 0 0);
+    --secondary-foreground-color: oklch(0 0 0);
+    --tertiary-background-color: oklch(0 0 0);
+    --tertiary-foreground-color: oklch(0 0 0);
 
-  /* Feedback Colors */
-  --success-background-color: oklch(0 0 0);
-  --success-foreground-color: oklch(0 0 0);
-  --error-background-color: oklch(0 0 0);
-  --error-foreground-color: oklch(0 0 0);
-  --warning-background-color: oklch(0 0 0);
-  --warning-foreground-color: oklch(0 0 0);
-  --info-background-color: oklch(0 0 0);
-  --info-foreground-color: oklch(0 0 0);
+    /* Feedback Colors */
+    --success-background-color: oklch(0 0 0);
+    --success-foreground-color: oklch(0 0 0);
+    --error-background-color: oklch(0 0 0);
+    --error-foreground-color: oklch(0 0 0);
+    --warning-background-color: oklch(0 0 0);
+    --warning-foreground-color: oklch(0 0 0);
+    --info-background-color: oklch(0 0 0);
+    --info-foreground-color: oklch(0 0 0);
 
-  /* Borders and Rings */
-  --border-color: oklch(0 0 0);
-  --ring-color: oklch(0 0 0);
+    /* Borders and Rings */
+    --border-color: oklch(0 0 0);
+    --ring-color: oklch(0 0 0);
+  }
 }
 
 /*
@@ -72,33 +84,33 @@
 /* Tailwind CSS */
 @theme inline {
   /* Font Families */
-  --font-sans: 'Noto Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-serif: 'Noto Serif Display', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
-  --font-mono: 'Noto Sans Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --font-sans: var(--font-family-sans);
+  --font-serif: var(--font-family-serif);
+  --font-mono: var(--font-family-mono);
 
   /* Base Colors */
-  --color-background: var(--default-background-color);
-  --color-foreground: var(--default-foreground-color);
-  --color-surface-background: var(--surface-background-color);
-  --color-surface-foreground: var(--surface-foreground-color);
+  --color-default-bg: var(--default-background-color);
+  --color-default-fg: var(--default-foreground-color);
+  --color-surface-bg: var(--surface-background-color);
+  --color-surface-fg: var(--surface-foreground-color);
 
   /* Semantic Colors */
-  --color-primary-background: var(--primary-background-color);
-  --color-primary-foreground: var(--primary-foreground-color);
-  --color-secondary-background: var(--secondary-background-color);
-  --color-secondary-foreground: var(--secondary-foreground-color);
-  --color-tertiary-background: var(--tertiary-background-color);
-  --color-tertiary-foreground: var(--tertiary-foreground-color);
+  --color-primary-bg: var(--primary-background-color);
+  --color-primary-fg: var(--primary-foreground-color);
+  --color-secondary-bg: var(--secondary-background-color);
+  --color-secondary-fg: var(--secondary-foreground-color);
+  --color-tertiary-bg: var(--tertiary-background-color);
+  --color-tertiary-fg: var(--tertiary-foreground-color);
 
   /* Feedback Colors */
-  --color-success-background: var(--success-background-color);
-  --color-success-foreground: var(--success-foreground-color);
-  --color-error-background: var(--error-background-color);
-  --color-error-foreground: var(--error-foreground-color);
-  --color-warning-background: var(--warning-background-color);
-  --color-warning-foreground: var(--warning-foreground-color);
-  --color-info-background: var(--info-background-color);
-  --color-info-foreground: var(--info-foreground-color);
+  --color-success-bg: var(--success-background-color);
+  --color-success-fg: var(--success-foreground-color);
+  --color-error-bg: var(--error-background-color);
+  --color-error-fg: var(--error-foreground-color);
+  --color-warning-bg: var(--warning-background-color);
+  --color-warning-fg: var(--warning-foreground-color);
+  --color-info-bg: var(--info-background-color);
+  --color-info-fg: var(--info-foreground-color);
 
   /* Borders and Rings */
   --color-border: var(--border-color);
