@@ -6,7 +6,7 @@ interface TagsProps {
 const Tags = ({ tags }: TagsProps): JSX.Element => {
   const tagColors: { [key: string]: string } = {
     Website: 'text-red-600 border-red-600 dark:text-red-800 dark:border-red-800',
-    Bootsrap: 'text-red-600 border-red-600 dark:text-red-800 dark:border-red-800',
+    Bootstrap: 'text-red-600 border-red-600 dark:text-red-800 dark:border-red-800',
 
     HTML: 'text-orange-600 border-orange-600 dark:text-orange-800 dark:border-orange-800',
     HBS: 'text-orange-600 border-orange-600 dark:text-orange-800 dark:border-orange-800',
