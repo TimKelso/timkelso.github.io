@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 function HorizontalLine(): JSX.Element {
   return <hr className="border-border" />;
 }

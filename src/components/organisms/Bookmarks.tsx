@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type JSX } from 'react';
 import { BookmarkUsage } from '../../context/feature/portfolio/BookmarkUsage';
 import { Button } from '../atoms/Button';
 import { Bookmark as BookmarkIcon, ChevronRight } from 'lucide-react';

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type JSX } from 'react';
 import { BookmarkMinus, BookmarkPlus, XCircle, Info, CodeXml, SquareArrowOutUpRight } from 'lucide-react';
 import { BookmarkUsage } from '../../context/feature/portfolio/BookmarkUsage';
 import Bookmarks from './Bookmarks';

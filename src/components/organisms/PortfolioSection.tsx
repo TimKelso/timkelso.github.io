@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import BookmarkProvider from '../../context/feature/portfolio/BookmarkProvider';
 import Project from './PortfolioProject';
 

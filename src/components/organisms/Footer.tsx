@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import GitHub from '../atoms/icons/GitHub';
 import Bluesky from '../atoms/icons/Bluesky';
 import LinkedIn from '../atoms/icons/LinkedIn';

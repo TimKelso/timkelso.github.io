@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 interface ImageProps {
   imagePath: string;
   alt: string;
