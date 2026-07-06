@@ -68,7 +68,6 @@ const Project = ({
 
       <div id="action" className="sticky top-0 flex h-dvh min-h-fit flex-col justify-between">
         <div className="flex flex-col gap-1">
-          {/* <Button icon="more_vert" onClick={() => console.log('Opened more buttons')} */}
           <Bookmarks onScrollToProject={scrollToProject} />
         </div>
         <div className="flex flex-col gap-1">
