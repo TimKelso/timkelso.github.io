@@ -8,19 +8,33 @@ export interface IconLabelButtonProps extends Omit<ButtonProps, 'children'> {
   label: string;
   iconClassName?: string;
   labelClassName?: string;
+  /** When set, the control renders as a link to this external page. */
+  href?: string;
 }
 
 const IconLabelButton = React.forwardRef<HTMLButtonElement, IconLabelButtonProps>(
-  ({ icon: IconComponent, label, variant = 'ghost', className, iconClassName, labelClassName, ...props }, ref) => {
-    return (
-      <Button
-        ref={ref}
-        variant={variant}
-        className={cn('flex h-auto flex-col items-center justify-center gap-1 p-2 [&_svg]:size-7', className)}
-        {...props}
-      >
+  ({ icon: IconComponent, label, variant = 'ghost', className, iconClassName, labelClassName, href, ...props }, ref) => {
+    const classNames = cn('flex h-auto flex-col items-center justify-center gap-1 p-2 [&_svg]:size-7', className);
+    const content = (
+      <>
         <IconComponent className={iconClassName} aria-hidden="true" />
         <span className={cn('text-xs', labelClassName)}>{label}</span>
+      </>
+    );
+
+    if (href) {
+      return (
+        <Button asChild ref={ref} variant={variant} className={classNames} {...props}>
+          <a href={href} target="_blank" rel="noopener noreferrer">
+            {content}
+          </a>
+        </Button>
+      );
+    }
+
+    return (
+      <Button ref={ref} variant={variant} className={classNames} {...props}>
+        {content}
       </Button>
     );
   },

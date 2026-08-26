@@ -93,10 +93,8 @@ const Project = ({
             variant="ghost"
             aria-expanded={showMoreInfo}
           />
-          {githubURL && <IconLabelButton icon={CodeXml} label="Code" onClick={() => window.open(githubURL, '_blank')} variant="ghost" />}
-          {projectURL && (
-            <IconLabelButton icon={SquareArrowOutUpRight} label="Open" onClick={() => window.open(projectURL, '_blank')} variant="ghost" />
-          )}
+          {githubURL && <IconLabelButton icon={CodeXml} label="Code" href={githubURL} variant="ghost" />}
+          {projectURL && <IconLabelButton icon={SquareArrowOutUpRight} label="Open" href={projectURL} variant="ghost" />}
         </div>
       </div>
     </article>
