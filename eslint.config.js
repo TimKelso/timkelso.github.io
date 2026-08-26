@@ -22,7 +22,6 @@ export default [
       },
       globals: {
         ...globals.browser,
-        ...globals.node,
       },
     },
     settings: { react: { version: 'detect' } },
