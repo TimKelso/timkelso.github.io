@@ -1,4 +1,4 @@
-import { useState, type ReactNode, type JSX } from 'react';
+import { useCallback, useEffect, useState, type ReactNode, type JSX } from 'react';
 import { BookmarkContext, Bookmark } from './BookmarkContext';
 
 interface BookmarkProviderProps {
@@ -28,13 +28,19 @@ const readStoredBookmarks = (): Bookmark[] => {
 const BookmarkProvider = ({ children }: BookmarkProviderProps): JSX.Element => {
   const [bookmarks, setBookmarks] = useState<Bookmark[]>(readStoredBookmarks);
 
-  const toggleBookmark = (id: string, title: string) => {
-    const isBookmarked = bookmarks.some((bookmark) => bookmark.id === id);
-    const updatedBookmarks = isBookmarked ? bookmarks.filter((bookmark) => bookmark.id !== id) : [...bookmarks, { id, title }];
+  useEffect(() => {
+    try {
+      localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    } catch {
+      // Persisting is a nicety; a full or unavailable store must not break the page.
+    }
+  }, [bookmarks]);
 
-    setBookmarks(updatedBookmarks);
-    localStorage.setItem('bookmarks', JSON.stringify(updatedBookmarks));
-  };
+  const toggleBookmark = useCallback((id: string, title: string) => {
+    setBookmarks((current) =>
+      current.some((bookmark) => bookmark.id === id) ? current.filter((bookmark) => bookmark.id !== id) : [...current, { id, title }],
+    );
+  }, []);
 
   return <BookmarkContext.Provider value={{ bookmarks, toggleBookmark }}>{children}</BookmarkContext.Provider>;
 };
