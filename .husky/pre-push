@@ -8,7 +8,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "2. Checking formatting for entire project..."
-npx prettier --check .
+npm run format:check
 if [ $? -ne 0 ]; then
   echo "Formatting check failed. Run 'npm run format' to fix. Aborting push."
   exit 1
