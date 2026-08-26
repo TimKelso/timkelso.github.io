@@ -43,11 +43,10 @@ const Project = ({
 
   return (
     <article id={projectId} className="flex min-h-dvh snap-start snap-always flex-row justify-between gap-1">
-      <div id="timeline" className="text-transparent">
-        vertical line
-      </div>
+      <div className="text-transparent">vertical line</div>
 
-      <div id="content" className="my-7 flex max-w-prose flex-col gap-5">
+      {/* content */}
+      <div className="my-7 flex max-w-prose flex-col gap-5">
         <Image imagePath={imagePath} alt={`Screenshot of '${title}'`} supportsVariants={supportsVariants} />
         <div className="flex h-full flex-col gap-3">
           <h5 className="text-secondary-fg font-mono text-base tracking-widest">{date}</h5>
@@ -66,7 +65,8 @@ const Project = ({
         </div>
       </div>
 
-      <div id="action" className="sticky top-0 flex h-dvh min-h-fit flex-col justify-between">
+      {/* actions */}
+      <div className="sticky top-0 flex h-dvh min-h-fit flex-col justify-between">
         <div className="flex flex-col gap-1">
           <Bookmarks onScrollToProject={scrollToProject} />
         </div>
