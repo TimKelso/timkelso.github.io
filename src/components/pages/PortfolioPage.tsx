@@ -1,12 +1,12 @@
 import Footer from '../organisms/Footer';
-import Section from '../organisms/PortfolioSection';
+import PortfolioSection from '../organisms/PortfolioSection';
 import HorizontalLine from '../atoms/HorizontalLine';
 import PortfolioTemplate from '../templates/PortfolioTemplate';
 
 function PortfolioPage() {
   return (
     <PortfolioTemplate
-      mainContent={<Section />}
+      mainContent={<PortfolioSection />}
       footer={
         <>
           <HorizontalLine />

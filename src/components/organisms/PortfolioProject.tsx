@@ -7,7 +7,7 @@ import { IconLabelButton } from '../molecules/IconLabelButton';
 import Tags from '../molecules/Tags';
 import type { Project as ProjectProps } from '../../data/projects';
 
-const Project = ({
+const PortfolioProject = ({
   date,
   title,
   descriptionHook,
@@ -90,4 +90,4 @@ const Project = ({
   );
 };
 
-export default Project;
+export default PortfolioProject;
