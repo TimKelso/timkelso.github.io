@@ -1,6 +1,6 @@
 # Architecture: Atomic Design File Structure
 
-This document outlines the project\'s file structure, which is based on the principles of Atomic Design. This methodology promotes a structured and hierarchical approach to UI development, enhancing scalability, maintainability, and reusability of components.
+This document outlines the project's file structure, which is based on the principles of Atomic Design. This methodology promotes a structured and hierarchical approach to UI development, enhancing scalability, maintainability, and reusability of components.
 
 ## Core Philosophy
 
@@ -20,7 +20,7 @@ The UI components are organized within the `src/components/` directory, followin
 
 ### 1. `src/components/atoms/`
 
-- **Purpose:** The smallest, indivisible UI elements. These are the basic building blocks of the application\'s visual language.
+- **Purpose:** The smallest, indivisible UI elements. These are the basic building blocks of the application's visual language.
 - **Examples:**
   - `Button.tsx`: A clickable button element.
   - `Input.tsx`: A form input field.
@@ -85,8 +85,8 @@ The UI components are organized within the `src/components/` directory, followin
 - **Purpose:** Specific instances of templates, populated with actual content and data. These are the most concrete UI views that users interact with.
 - **Examples:**
   - `HomePage.tsx`: (Uses a `StandardPageTemplate.tsx` or a custom template, filled with specific content for the home page).
-  - `UserProfilePage.tsx`: (Uses a `ProfileTemplate.tsx` or `TwoColumnLayout.tsx`, populated with a specific user\'s data).
-  - `ArticleDetailPage.tsx`: (Uses `BlogPostTemplate.tsx`, filled with a particular article\'s content).
+  - `UserProfilePage.tsx`: (Uses a `ProfileTemplate.tsx` or `TwoColumnLayout.tsx`, populated with a specific user's data).
+  - `ArticleDetailPage.tsx`: (Uses `BlogPostTemplate.tsx`, filled with a particular article's content).
 - **Characteristics:**
   - Combine a template with actual content (data, text, images, etc.).
   - Represent a full view or route within the application.
@@ -102,9 +102,9 @@ The UI components are organized within the `src/components/` directory, followin
   - **By Feature/Domain (Recommended for Scalability):** Create subdirectories for major features or domains. This approach groups related state logic, making it easier to manage as the application grows.
 - **Contents of a Context Module:**
   - `ContextNameContext.ts`: Defines `createContext()` and associated types.
-  - `ContextNameProvider.tsx`: The provider component that manages and exposes the context\'s state and update functions.
+  - `ContextNameProvider.tsx`: The provider component that manages and exposes the context's state and update functions.
   - `useContextName.ts`: A custom hook (e.g., `useTheme()`) for easy and safe consumption of the context, often including a check to ensure it's used within its provider.
-- **Usage:** While any component can technically consume context, it\'s generally best practice for more granular components (like atoms and many molecules) to receive data via props. Organisms and pages are more common consumers of context, then passing data down as props. This promotes better component decoupling and reusability.
+- **Usage:** While any component can technically consume context, it's generally best practice for more granular components (like atoms and many molecules) to receive data via props. Organisms and pages are more common consumers of context, then passing data down as props. This promotes better component decoupling and reusability.
 
 ### `src/styles/`
 
@@ -125,7 +125,7 @@ The UI components are organized within the `src/components/` directory, followin
 
 ## General Guidelines & Best Practices
 
-- **Clarity and Pragmatism:** While Atomic Design provides a robust framework, the primary goal is a clear, intuitive, and maintainable codebase. If a component doesn\'t fit perfectly into one category, choose the one that makes the most sense for its complexity, reusability, and role in the UI.
+- **Clarity and Pragmatism:** While Atomic Design provides a robust framework, the primary goal is a clear, intuitive, and maintainable codebase. If a component doesn't fit perfectly into one category, choose the one that makes the most sense for its complexity, reusability, and role in the UI.
 - **Reusability:**
   - **Atoms:** Aim for maximum reusability. They should be generic and configurable.
   - **Molecules:** Should also be highly reusable.
