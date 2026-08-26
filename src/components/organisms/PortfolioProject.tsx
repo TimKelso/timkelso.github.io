@@ -54,8 +54,8 @@ const Project = ({
       <div className="my-7 flex max-w-prose flex-col gap-5">
         <Image imagePath={imagePath} alt={`Screenshot of '${title}'`} supportsVariants={supportsVariants} />
         <div className="flex h-full flex-col gap-3">
-          <h5 className="text-secondary-fg font-mono text-base tracking-widest">{date}</h5>
-          <h4 className="text-3xl">{title}</h4>
+          <p className="text-secondary-fg font-mono text-base tracking-widest">{date}</p>
+          <h3 className="text-3xl">{title}</h3>
           <p className="line-clamp-5 text-base text-pretty break-words">{descriptionHook}</p>
           {showMoreInfo ? (
             <div className="text-base text-pretty">
