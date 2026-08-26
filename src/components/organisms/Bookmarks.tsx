@@ -4,7 +4,7 @@ import { Button } from '../atoms/Button';
 import { Bookmark as BookmarkIcon, ChevronRight } from 'lucide-react';
 
 interface BookmarksProps {
-  onScrollToProject: (_id: string) => void;
+  onScrollToProject: (id: string) => void;
 }
 
 const Bookmarks = ({ onScrollToProject }: BookmarksProps): JSX.Element => {
