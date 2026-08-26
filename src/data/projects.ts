@@ -1,4 +1,16 @@
-export const projects = [
+export interface Project {
+  date: string;
+  title: string;
+  descriptionHook: string;
+  descriptionLong: string[];
+  tags: string[];
+  imagePath: string;
+  supportsVariants?: boolean;
+  projectURL?: string | null;
+  githubURL?: string | null;
+}
+
+export const projects: Project[] = [
   {
     date: '12 Dec 2024',
     title: 'Point of Sale System',

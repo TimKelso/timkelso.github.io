@@ -5,18 +5,7 @@ import Bookmarks from './Bookmarks';
 import Image from '../atoms/Image';
 import { IconLabelButton } from '../molecules/IconLabelButton';
 import Tags from '../molecules/Tags';
-
-interface ProjectProps {
-  date: string;
-  title: string;
-  descriptionHook: string;
-  descriptionLong: string[];
-  tags: string[];
-  imagePath: string;
-  supportsVariants?: boolean;
-  projectURL?: string | null;
-  githubURL?: string | null;
-}
+import type { Project as ProjectProps } from '../../data/projects';
 
 const Project = ({
   date,
