@@ -36,9 +36,12 @@ const Project = ({
 
   const scrollToProject = (id: string) => {
     const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (!element) return;
+
+    // Smooth scrolling across a full-height snapping feed is a long, moving
+    // animation -- exactly what reduced-motion users are asking us not to do.
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    element.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
   };
 
   return (
