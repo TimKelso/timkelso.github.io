@@ -3,9 +3,13 @@ interface ImageProps {
   imagePath: string;
   alt: string;
   supportsVariants?: boolean;
+  /** Intrinsic pixel size of the source asset. Every screenshot is currently
+   *  square, so the defaults reserve a 1:1 box while the image loads. */
+  width?: number;
+  height?: number;
 }
 
-const Image = ({ imagePath, alt, supportsVariants = false }: ImageProps): JSX.Element => {
+const Image = ({ imagePath, alt, supportsVariants = false, width = 1000, height = 1000 }: ImageProps): JSX.Element => {
   const getImageSrc = (mode: string, ext: string) => (supportsVariants ? `${imagePath}/${mode}/img.${ext}` : `${imagePath}/img.${ext}`);
 
   const imgClasses = 'rounded-xl max-h-[40svh]';
@@ -34,11 +38,19 @@ const Image = ({ imagePath, alt, supportsVariants = false }: ImageProps): JSX.El
     <div className="relative mx-auto">
       <picture>
         {sources}
-        <img className={imgClasses} src={getImageSrc('light_mode', 'jpg')} alt={alt} loading="lazy" />
+        <img className={imgClasses} src={getImageSrc('light_mode', 'jpg')} alt={alt} width={width} height={height} loading="lazy" />
       </picture>
       <picture>
         {sources}
-        <img className={blurImgClasses} src={getImageSrc('light_mode', 'jpg')} aria-hidden="true" alt="" loading="lazy" />
+        <img
+          className={blurImgClasses}
+          src={getImageSrc('light_mode', 'jpg')}
+          aria-hidden="true"
+          alt=""
+          width={width}
+          height={height}
+          loading="lazy"
+        />
       </picture>
     </div>
   );
