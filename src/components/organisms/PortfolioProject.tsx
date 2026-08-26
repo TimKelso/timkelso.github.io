@@ -1,6 +1,6 @@
 import { useState, type JSX } from 'react';
 import { BookmarkMinus, BookmarkPlus, XCircle, Info, CodeXml, SquareArrowOutUpRight } from 'lucide-react';
-import { BookmarkUsage } from '../../context/feature/portfolio/BookmarkUsage';
+import { useBookmarks } from '../../context/feature/portfolio/useBookmarks';
 import Bookmarks from './Bookmarks';
 import Image from '../atoms/Image';
 import { IconLabelButton } from '../molecules/IconLabelButton';
@@ -30,7 +30,7 @@ const Project = ({
   githubURL,
 }: ProjectProps): JSX.Element => {
   const projectId = `portfolio-${title.toLowerCase().replace(/\s+/g, '-')}`;
-  const { bookmarks, toggleBookmark } = BookmarkUsage();
+  const { bookmarks, toggleBookmark } = useBookmarks();
   const isBookmarked = bookmarks.some((bookmark) => bookmark.id === projectId);
   const [showMoreInfo, setShowMoreInfo] = useState(false);
 

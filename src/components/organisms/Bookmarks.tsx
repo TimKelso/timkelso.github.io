@@ -1,5 +1,5 @@
 import { useState, type JSX } from 'react';
-import { BookmarkUsage } from '../../context/feature/portfolio/BookmarkUsage';
+import { useBookmarks } from '../../context/feature/portfolio/useBookmarks';
 import { Button } from '../atoms/Button';
 import { Bookmark as BookmarkIcon, ChevronRight } from 'lucide-react';
 
@@ -8,7 +8,7 @@ interface BookmarksProps {
 }
 
 const Bookmarks = ({ onScrollToProject }: BookmarksProps): JSX.Element => {
-  const { bookmarks } = BookmarkUsage();
+  const { bookmarks } = useBookmarks();
   const [menuVisible, setMenuVisible] = useState(false);
   const hasBookmarks = bookmarks.length > 0;
   const buttonAriaLabel = hasBookmarks ? `View ${bookmarks.length} bookmarks` : 'View bookmarks';
