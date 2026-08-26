@@ -43,7 +43,12 @@ const Project = ({
 
   return (
     <article id={projectId} className="flex min-h-dvh snap-start snap-always flex-row justify-between gap-1">
-      <div className="text-transparent">vertical line</div>
+      {/* Placeholder holding the gutter open for the planned animated
+          timeline. The text sizes the column; it must stay out of the
+          accessibility tree and out of the selection. */}
+      <div aria-hidden="true" className="text-transparent select-none">
+        vertical line
+      </div>
 
       {/* content */}
       <div className="my-7 flex max-w-prose flex-col gap-5">
