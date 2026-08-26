@@ -26,7 +26,7 @@ const Bookmarks = ({ onScrollToProject }: BookmarksProps): JSX.Element => {
       </Button>
 
       {menuVisible && (
-        <ul className="bg-surface-bg border-border absolute right-0 z-10 rounded-md border p-1 shadow-md select-none">
+        <ul className="bg-surface-bg border-border absolute right-0 z-10 rounded-md border p-1 shadow-md">
           {hasBookmarks ? (
             bookmarks.map((bookmark) => (
               <li key={bookmark.id}>
