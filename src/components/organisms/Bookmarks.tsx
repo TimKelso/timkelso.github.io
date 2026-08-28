@@ -1,14 +1,14 @@
 import { useState, type JSX } from 'react';
-import { BookmarkUsage } from '../../context/feature/portfolio/BookmarkUsage';
+import { useBookmarks } from '../../context/feature/portfolio/useBookmarks';
 import { Button } from '../atoms/Button';
 import { Bookmark as BookmarkIcon, ChevronRight } from 'lucide-react';
 
 interface BookmarksProps {
-  onScrollToProject: (_id: string) => void;
+  onScrollToProject: (id: string) => void;
 }
 
 const Bookmarks = ({ onScrollToProject }: BookmarksProps): JSX.Element => {
-  const { bookmarks } = BookmarkUsage();
+  const { bookmarks } = useBookmarks();
   const [menuVisible, setMenuVisible] = useState(false);
   const hasBookmarks = bookmarks.length > 0;
   const buttonAriaLabel = hasBookmarks ? `View ${bookmarks.length} bookmarks` : 'View bookmarks';
@@ -26,7 +26,7 @@ const Bookmarks = ({ onScrollToProject }: BookmarksProps): JSX.Element => {
       </Button>
 
       {menuVisible && (
-        <ul className="bg-surface-bg border-border absolute right-0 z-10 rounded-md border p-1 shadow-md select-none">
+        <ul className="bg-surface-bg border-border absolute right-0 z-10 rounded-md border p-1 shadow-md">
           {hasBookmarks ? (
             bookmarks.map((bookmark) => (
               <li key={bookmark.id}>

@@ -1,24 +1,13 @@
 import { useState, type JSX } from 'react';
 import { BookmarkMinus, BookmarkPlus, XCircle, Info, CodeXml, SquareArrowOutUpRight } from 'lucide-react';
-import { BookmarkUsage } from '../../context/feature/portfolio/BookmarkUsage';
+import { useBookmarks } from '../../context/feature/portfolio/useBookmarks';
 import Bookmarks from './Bookmarks';
 import Image from '../atoms/Image';
 import { IconLabelButton } from '../molecules/IconLabelButton';
 import Tags from '../molecules/Tags';
+import type { Project as ProjectProps } from '../../data/projects';
 
-interface ProjectProps {
-  date: string;
-  title: string;
-  descriptionHook: string;
-  descriptionLong: string[];
-  tags: string[];
-  imagePath: string;
-  supportsVariants?: boolean;
-  projectURL?: string | null;
-  githubURL?: string | null;
-}
-
-const Project = ({
+const PortfolioProject = ({
   date,
   title,
   descriptionHook,
@@ -30,28 +19,35 @@ const Project = ({
   githubURL,
 }: ProjectProps): JSX.Element => {
   const projectId = `portfolio-${title.toLowerCase().replace(/\s+/g, '-')}`;
-  const { bookmarks, toggleBookmark } = BookmarkUsage();
+  const { bookmarks, toggleBookmark } = useBookmarks();
   const isBookmarked = bookmarks.some((bookmark) => bookmark.id === projectId);
   const [showMoreInfo, setShowMoreInfo] = useState(false);
 
   const scrollToProject = (id: string) => {
     const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (!element) return;
+
+    // Smooth scrolling across a full-height snapping feed is a long, moving
+    // animation -- exactly what reduced-motion users are asking us not to do.
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    element.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
   };
 
   return (
     <article id={projectId} className="flex min-h-dvh snap-start snap-always flex-row justify-between gap-1">
-      <div id="timeline" className="text-transparent">
+      {/* Placeholder holding the gutter open for the planned animated
+          timeline. The text sizes the column; it must stay out of the
+          accessibility tree and out of the selection. */}
+      <div aria-hidden="true" className="text-transparent select-none">
         vertical line
       </div>
 
-      <div id="content" className="my-7 flex max-w-prose flex-col gap-5">
+      {/* content */}
+      <div className="my-7 flex max-w-prose flex-col gap-5">
         <Image imagePath={imagePath} alt={`Screenshot of '${title}'`} supportsVariants={supportsVariants} />
         <div className="flex h-full flex-col gap-3">
-          <h5 className="text-secondary-fg font-mono text-base tracking-widest">{date}</h5>
-          <h4 className="text-3xl">{title}</h4>
+          <p className="text-secondary-fg font-mono text-base tracking-widest">{date}</p>
+          <h3 className="text-3xl">{title}</h3>
           <p className="line-clamp-5 text-base text-pretty break-words">{descriptionHook}</p>
           {showMoreInfo ? (
             <div className="text-base text-pretty">
@@ -66,7 +62,8 @@ const Project = ({
         </div>
       </div>
 
-      <div id="action" className="sticky top-0 flex h-dvh min-h-fit flex-col justify-between">
+      {/* actions */}
+      <div className="sticky top-0 flex h-dvh min-h-fit flex-col justify-between">
         <div className="flex flex-col gap-1">
           <Bookmarks onScrollToProject={scrollToProject} />
         </div>
@@ -85,14 +82,12 @@ const Project = ({
             variant="ghost"
             aria-expanded={showMoreInfo}
           />
-          {githubURL && <IconLabelButton icon={CodeXml} label="Code" onClick={() => window.open(githubURL, '_blank')} variant="ghost" />}
-          {projectURL && (
-            <IconLabelButton icon={SquareArrowOutUpRight} label="Open" onClick={() => window.open(projectURL, '_blank')} variant="ghost" />
-          )}
+          {githubURL && <IconLabelButton icon={CodeXml} label="Code" href={githubURL} variant="ghost" />}
+          {projectURL && <IconLabelButton icon={SquareArrowOutUpRight} label="Open" href={projectURL} variant="ghost" />}
         </div>
       </div>
     </article>
   );
 };
 
-export default Project;
+export default PortfolioProject;
