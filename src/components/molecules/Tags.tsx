@@ -7,18 +7,18 @@ const tagColors: { [key: string]: string } = {
   Website: 'text-red-600 border-red-600 dark:text-red-500 dark:border-red-500',
   Bootstrap: 'text-red-600 border-red-600 dark:text-red-500 dark:border-red-500',
 
-  HTML: 'text-orange-600 border-orange-600 dark:text-orange-600 dark:border-orange-600',
-  HBS: 'text-orange-600 border-orange-600 dark:text-orange-600 dark:border-orange-600',
+  HTML: 'text-orange-700 border-orange-700 dark:text-orange-600 dark:border-orange-600',
+  HBS: 'text-orange-700 border-orange-700 dark:text-orange-600 dark:border-orange-600',
 
-  JavaScript: 'text-yellow-600 border-yellow-600 dark:text-yellow-600 dark:border-yellow-600',
-  'Express.js': 'text-yellow-600 border-yellow-600 dark:text-yellow-600 dark:border-yellow-600',
+  JavaScript: 'text-yellow-700 border-yellow-700 dark:text-yellow-600 dark:border-yellow-600',
+  'Express.js': 'text-yellow-700 border-yellow-700 dark:text-yellow-600 dark:border-yellow-600',
 
-  Game: 'text-green-600 border-green-600 dark:text-green-600 dark:border-green-600',
-  'C#': 'text-green-600 border-green-600 dark:text-green-600 dark:border-green-600',
+  Game: 'text-green-700 border-green-700 dark:text-green-600 dark:border-green-600',
+  'C#': 'text-green-700 border-green-700 dark:text-green-600 dark:border-green-600',
 
-  Clone: 'text-teal-600 border-teal-600 dark:text-teal-600 dark:border-teal-600',
-  React: 'text-teal-600 border-teal-600 dark:text-teal-600 dark:border-teal-600',
-  Python: 'text-teal-600 border-teal-600 dark:text-teal-600 dark:border-teal-600',
+  Clone: 'text-teal-700 border-teal-700 dark:text-teal-600 dark:border-teal-600',
+  React: 'text-teal-700 border-teal-700 dark:text-teal-600 dark:border-teal-600',
+  Python: 'text-teal-700 border-teal-700 dark:text-teal-600 dark:border-teal-600',
 
   Corporate: 'text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500',
   Business: 'text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500',
