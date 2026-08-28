@@ -3,8 +3,10 @@ interface ImageProps {
   imagePath: string;
   alt: string;
   supportsVariants?: boolean;
-  /** Intrinsic pixel size of the source asset. Every screenshot is currently
-   *  square, so the defaults reserve a 1:1 box while the image loads. */
+  /** Intrinsic pixel size of the source asset. The browser derives the
+   *  aspect ratio from these, which both reserves the box before the image
+   *  loads and keeps the rendered image from being stretched. Every
+   *  screenshot is currently square, hence the defaults. */
   width?: number;
   height?: number;
 }
@@ -12,7 +14,7 @@ interface ImageProps {
 const Image = ({ imagePath, alt, supportsVariants = false, width = 1000, height = 1000 }: ImageProps): JSX.Element => {
   const getImageSrc = (mode: string, ext: string) => (supportsVariants ? `${imagePath}/${mode}/img.${ext}` : `${imagePath}/img.${ext}`);
 
-  const imgClasses = 'rounded-xl max-h-[40svh]';
+  const imgClasses = 'rounded-xl w-[40svh] max-w-full h-auto';
   const blurImgClasses = 'rounded-xl max-h-[40svh] inset-0 absolute -z-1 scale-90 blur-3xl saturate-200';
 
   // Ordered most to least specific: the browser picks the first <source>
@@ -42,15 +44,7 @@ const Image = ({ imagePath, alt, supportsVariants = false, width = 1000, height 
       </picture>
       <picture>
         {sources}
-        <img
-          className={blurImgClasses}
-          src={getImageSrc('light_mode', 'jpg')}
-          aria-hidden="true"
-          alt=""
-          width={width}
-          height={height}
-          loading="lazy"
-        />
+        <img className={blurImgClasses} src={getImageSrc('light_mode', 'jpg')} aria-hidden="true" alt="" loading="lazy" />
       </picture>
     </div>
   );
