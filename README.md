@@ -74,8 +74,8 @@ Deployments instead.
 
 This requires **Settings → Pages → Build and deployment → Source** to be
 set to **GitHub Actions**. The custom domain is configured on that same
-page; `public/CNAME` is carried into the build for continuity but the
-Actions deployment does not read it.
+page rather than by a `CNAME` file — an Actions deployment ignores one if
+it is present.
 
 ## Contributing
 
