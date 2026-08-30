@@ -25,6 +25,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
+        with:
+          # Nothing in this job talks to git, so do not leave a usable
+          # token behind in .git/config for later steps to pick up.
+          persist-credentials: false
 
       - name: Set up Node.js
         uses: actions/setup-node@v6
