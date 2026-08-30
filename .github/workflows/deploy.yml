@@ -6,6 +6,12 @@ on:
       - main
   pull_request:
 
+# One run per branch: superseded pull request runs are cancelled, but a run
+# that is already deploying main is always allowed to finish.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 # Permissions are granted per job; the checks job needs none beyond read.
 permissions:
   contents: read
@@ -49,6 +55,11 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    # GitHub Pages accepts one deployment at a time; queue them rather than
+    # cancelling, so the newest commit is always the one left live.
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     permissions:
       pages: write
       id-token: write
