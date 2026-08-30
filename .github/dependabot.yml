@@ -1,11 +1,41 @@
 version: 2
+
 updates:
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
-      interval: 'monthly'
+      interval: 'weekly'
+      day: 'monday'
+    open-pull-requests-limit: 5
+    # A just-published release is the one most likely to be yanked or to
+    # carry a compromised postinstall script, so let it settle first.
+    cooldown:
+      default-days: 7
+      semver-major-days: 30
+    groups:
+      # Routine bumps arrive as a single pull request; majors stay on their
+      # own, where the changelog is worth reading.
+      npm:
+        patterns:
+          - '*'
+        update-types:
+          - 'minor'
+          - 'patch'
+    commit-message:
+      prefix: 'chore'
+      include: 'scope'
 
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
-      interval: 'monthly'
+      interval: 'weekly'
+      day: 'monday'
+    open-pull-requests-limit: 5
+    groups:
+      # A handful of actions in one workflow: one pull request for all.
+      github-actions:
+        patterns:
+          - '*'
+    commit-message:
+      prefix: 'ci'
+      include: 'scope'

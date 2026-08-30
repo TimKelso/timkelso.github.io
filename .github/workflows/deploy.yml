@@ -5,6 +5,15 @@ on:
     branches:
       - main
   pull_request:
+  # Lets a deploy be re-run from the Actions tab without an empty commit —
+  # needed the first time, right after the Pages source is switched over.
+  workflow_dispatch:
+
+# One run per branch: superseded pull request runs are cancelled, but a run
+# that is already deploying main is always allowed to finish.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 # Permissions are granted per job; the checks job needs none beyond read.
 permissions:
@@ -19,11 +28,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
+        with:
+          # Nothing in this job talks to git, so do not leave a usable
+          # token behind in .git/config for later steps to pick up.
+          persist-credentials: false
 
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '22'
+          node-version: '24'
           cache: 'npm'
 
       - name: Install dependencies
@@ -38,34 +51,30 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Upload build output
-        uses: actions/upload-artifact@v4
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v5
         with:
-          name: dist
           path: ./dist
-          retention-days: 1
 
   deploy:
     name: Deploy to GitHub Pages
     needs: checks
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    # GitHub Pages accepts one deployment at a time; queue them rather than
+    # cancelling, so the newest commit is always the one left live.
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     permissions:
-      contents: write
+      pages: write
+      id-token: write
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Download build output
-        uses: actions/download-artifact@v4
-        with:
-          name: dist
-          path: ./dist
-
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          commit_message: 'Deploy commit: ${{ github.event.head_commit.message }}'
+        id: deployment
+        uses: actions/deploy-pages@v5

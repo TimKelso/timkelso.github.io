@@ -64,6 +64,19 @@ python3 scripts/subset-fonts.py /path/to/downloaded/ttfs
 Keep the `unicode-range` declarations in `src/styles/fonts.css` in sync
 with the ranges in that script.
 
+## Deployment
+
+Every push to `main` that passes CI is published to GitHub Pages by
+`.github/workflows/deploy.yml`. The build is uploaded as a Pages artifact
+and deployed with `actions/deploy-pages`, so there is no `gh-pages`
+branch: the deployed commit and its URL are recorded under the repository's
+Deployments instead.
+
+This requires **Settings → Pages → Build and deployment → Source** to be
+set to **GitHub Actions**. The custom domain is configured on that same
+page; `public/CNAME` is carried into the build for continuity but the
+Actions deployment does not read it.
+
 ## Contributing
 
 Husky runs `lint-staged` on commit and lint, format and build checks on
