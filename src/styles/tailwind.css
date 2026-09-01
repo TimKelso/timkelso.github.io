@@ -18,8 +18,11 @@
    what an exported PNG can reproduce. Chroma therefore differs per hue -- the
    gamut is not a cylinder.
 
-   Ratios in the comments are measured WCAG 2.x against that mode's
-   --default-background-color unless stated otherwise.
+   Ratios in the comments are WCAG 2.x, read back out of Chromium: each colour
+   is painted to a canvas, the 8-bit sRGB bytes are sampled, and the ratio is
+   computed from those. That is what the user's screen actually shows, which
+   is not always what a float-precision colour library predicts. Measured
+   against that mode's --default-background-color unless stated otherwise.
 
      accent-N        >= 4.5:1  body text, links, icons, small type
      accent-N-vivid  >= 3:1    logo, display type, fills, borders -- NOT body text
@@ -38,48 +41,48 @@
 @media (prefers-color-scheme: light) {
   :root {
     /* Brand accents. L is pinned at 54.5%; hue and chroma carry the ramp. */
-    --accent-1-color: oklch(54.5% 0.222 27.325); /* #D30114  5.09:1  crimson */
-    --accent-2-color: oklch(54.5% 0.167 41.116); /* #BC4300  4.89:1  ember   */
-    --accent-3-color: oklch(54.5% 0.13 58.318); /* #A65900  4.73:1  amber   */
+    --accent-1-color: oklch(54.5% 0.222 27.325); /* #D30114  5.07:1  crimson */
+    --accent-2-color: oklch(54.5% 0.167 41.116); /* #BC4301  4.87:1  ember   */
+    --accent-3-color: oklch(54.5% 0.13 58.318); /* #A65900  4.74:1  amber   */
 
     /* Same hues lifted to L 62% for maximum burn. Large shapes only. */
     --accent-1-vivid-color: oklch(62% 0.252 27.325); /* #FA031B  3.77:1 */
     --accent-2-vivid-color: oklch(62% 0.19 41.116); /* #DF5101  3.61:1 */
-    --accent-3-vivid-color: oklch(62% 0.147 58.318); /* #C56C03  3.49:1 */
+    --accent-3-vivid-color: oklch(62% 0.147 58.318); /* #C56C03  3.48:1 */
 
     /* Text placed on a solid accent fill. */
-    --on-accent-1-color: oklch(100% 0 0); /* 5.56:1 on accent-1 */
-    --on-accent-2-color: oklch(100% 0 0); /* 5.34:1 on accent-2 */
-    --on-accent-3-color: oklch(100% 0 0); /* 5.17:1 on accent-3 */
+    --on-accent-1-color: oklch(100% 0 0); /* 5.55:1 on accent-1 */
+    --on-accent-2-color: oklch(100% 0 0); /* 5.33:1 on accent-2 */
+    --on-accent-3-color: oklch(100% 0 0); /* 5.18:1 on accent-3 */
 
     /* Base Colors */
     --default-background-color: oklch(97.1% 0.013 17.38); /* #FEF2F2 warm off-white */
-    --default-foreground-color: oklch(22% 0.021 27.325); /* #241715  15.94:1 */
+    --default-foreground-color: oklch(22% 0.021 27.325); /* #241715  15.89:1 */
     --surface-background-color: oklch(100% 0 0); /* #FFFFFF  raised above the page */
-    --surface-foreground-color: oklch(22% 0.021 27.325); /* 16.9:1 on surface */
-    --muted-foreground-color: oklch(44% 0.028 27.325); /* #614D4A   7.20:1 */
+    --surface-foreground-color: oklch(22% 0.021 27.325); /* 17.38:1 on surface */
+    --muted-foreground-color: oklch(44% 0.028 27.325); /* #614D4A   7.19:1 */
 
     /* Semantic Colors -- UI roles, built out of the accents above */
     --primary-background-color: oklch(54.5% 0.222 27.325); /* accent-1 fill */
-    --primary-foreground-color: oklch(100% 0 0); /* 5.56:1 on it  */
+    --primary-foreground-color: oklch(100% 0 0); /* 5.55:1 on it  */
     --secondary-background-color: oklch(95% 0.008 27.325); /* #F4EDEB quiet surface */
     --secondary-foreground-color: oklch(44% 0.028 27.325); /* muted page text */
     --tertiary-background-color: oklch(94% 0.03 27.325); /* #FFE4E0 accent tint */
-    --tertiary-foreground-color: oklch(54.5% 0.222 27.325); /* 4.62:1 on the tint */
+    --tertiary-foreground-color: oklch(54.5% 0.222 27.325); /* 4.60:1 on the tint */
 
     /* Feedback Colors -- fill + the text that sits on it */
-    --success-background-color: oklch(52% 0.15 148); /* #027F31  4.72:1 */
+    --success-background-color: oklch(52% 0.15 148); /* #017F31  4.70:1 */
     --success-foreground-color: oklch(100% 0 0); /* 5.15:1 on it */
-    --error-background-color: oklch(52% 0.2 27); /* #C2181D  5.59:1 */
-    --error-foreground-color: oklch(100% 0 0); /* 6.11:1 on it */
+    --error-background-color: oklch(52% 0.2 27); /* #C2181D  5.58:1 */
+    --error-foreground-color: oklch(100% 0 0); /* 6.10:1 on it */
     --warning-background-color: oklch(52% 0.109 75); /* #8D5E02  5.14:1 */
     --warning-foreground-color: oklch(100% 0 0); /* 5.62:1 on it */
-    --info-background-color: oklch(52% 0.119 240); /* #0070A6  4.97:1 */
+    --info-background-color: oklch(52% 0.119 240); /* #0070A6  4.96:1 */
     --info-foreground-color: oklch(100% 0 0); /* 5.43:1 on it */
 
     /* Borders and Rings */
-    --border-color: oklch(88% 0.02 27.325); /* #E5D3D0 hairline, decorative */
-    --ring-color: oklch(54.5% 0.222 27.325); /* accent-1, 5.09:1 -- focus must be seen */
+    --border-color: oklch(88% 0.02 27.325); /* #E4D3D0 hairline, decorative */
+    --ring-color: oklch(54.5% 0.222 27.325); /* accent-1, 5.07:1 -- focus must be seen */
   }
 }
 
@@ -87,19 +90,19 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* Brand accents. L is pinned at 68%; hue and chroma carry the ramp. */
-    --accent-1-color: oklch(68% 0.168 262.881); /* #5F94FF  7.15:1  azure  */
-    --accent-2-color: oklch(68% 0.17 276.966); /* #808AFF  7.01:1  indigo */
-    --accent-3-color: oklch(68% 0.186 293.009); /* #9F7DFF  6.82:1  violet */
+    --accent-1-color: oklch(68% 0.168 262.881); /* #5F94FF  7.17:1  azure  */
+    --accent-2-color: oklch(68% 0.17 276.966); /* #808AFF  7.00:1  indigo */
+    --accent-3-color: oklch(68% 0.186 293.009); /* #9F7DFF  6.85:1  violet */
 
     /* Dropped to L 62% -- in dark mode chroma is bought with lightness. */
-    --accent-1-vivid-color: oklch(62% 0.204 262.881); /* #3F7DFF  5.58:1 */
-    --accent-2-vivid-color: oklch(62% 0.207 276.966); /* #6C71FF  5.42:1 */
-    --accent-3-vivid-color: oklch(62% 0.227 293.009); /* #905EFF  5.24:1 */
+    --accent-1-vivid-color: oklch(62% 0.204 262.881); /* #3F7DFF  5.59:1 */
+    --accent-2-vivid-color: oklch(62% 0.207 276.966); /* #6C71FF  5.44:1 */
+    --accent-3-vivid-color: oklch(62% 0.227 293.009); /* #905EFF  5.23:1 */
 
     /* Text placed on a solid accent fill. */
-    --on-accent-1-color: oklch(0% 0 0); /* 7.15:1 on accent-1 */
-    --on-accent-2-color: oklch(0% 0 0); /* 7.01:1 on accent-2 */
-    --on-accent-3-color: oklch(0% 0 0); /* 6.82:1 on accent-3 */
+    --on-accent-1-color: oklch(0% 0 0); /* 7.17:1 on accent-1 */
+    --on-accent-2-color: oklch(0% 0 0); /* 7.00:1 on accent-2 */
+    --on-accent-3-color: oklch(0% 0 0); /* 6.85:1 on accent-3 */
 
     /* Base Colors.
        The page canvas stays pure black -- it is the OLED win and it suits a
@@ -108,32 +111,32 @@
        sit inside the palette rather than beside it. Foreground is capped at
        L 90%, not white: #FFF on #000 is what causes halation on OLED. */
     --default-background-color: oklch(0% 0 0); /* #000000 */
-    --default-foreground-color: oklch(90% 0.008 265); /* #DBDEE3  15.58:1 */
+    --default-foreground-color: oklch(90% 0.008 265); /* #DBDEE3  15.57:1 */
     --surface-background-color: oklch(18.5% 0.012 265); /* #101318  1.13:1 vs page */
-    --surface-foreground-color: oklch(90% 0.008 265); /* 13.83:1 on surface */
-    --muted-foreground-color: oklch(68% 0.02 265); /* #9298A5   7.29:1 */
+    --surface-foreground-color: oklch(90% 0.008 265); /* 13.80:1 on surface */
+    --muted-foreground-color: oklch(68% 0.02 265); /* #9298A5   7.26:1 */
 
     /* Semantic Colors -- UI roles, built out of the accents above */
     --primary-background-color: oklch(68% 0.168 262.881); /* accent-1 fill */
-    --primary-foreground-color: oklch(0% 0 0); /* 7.15:1 on it  */
+    --primary-foreground-color: oklch(0% 0 0); /* 7.17:1 on it  */
     --secondary-background-color: oklch(24% 0.01 265); /* #1D1F24 quiet surface */
     --secondary-foreground-color: oklch(68% 0.02 265); /* muted page text */
     --tertiary-background-color: oklch(25% 0.04 265); /* #182135 accent tint */
-    --tertiary-foreground-color: oklch(68% 0.168 262.881); /* 5.46:1 on the tint */
+    --tertiary-foreground-color: oklch(68% 0.168 262.881); /* 5.48:1 on the tint */
 
     /* Feedback Colors -- fill + the text that sits on it */
     --success-background-color: oklch(68% 0.196 148); /* #04B74A  7.88:1 */
     --success-foreground-color: oklch(0% 0 0); /* 7.88:1 on it */
-    --error-background-color: oklch(68% 0.2 27); /* #FC594F  6.66:1 */
-    --error-foreground-color: oklch(0% 0 0); /* 6.66:1 on it */
+    --error-background-color: oklch(68% 0.2 27); /* #FC5950  6.68:1 */
+    --error-foreground-color: oklch(0% 0 0); /* 6.68:1 on it */
     --warning-background-color: oklch(68% 0.143 75); /* #CB8902  7.12:1 */
     --warning-foreground-color: oklch(0% 0 0); /* 7.12:1 on it */
-    --info-background-color: oklch(68% 0.155 240); /* #05A2ED  7.42:1 */
-    --info-foreground-color: oklch(0% 0 0); /* 7.42:1 on it */
+    --info-background-color: oklch(68% 0.155 240); /* #04A2ED  7.40:1 */
+    --info-foreground-color: oklch(0% 0 0); /* 7.40:1 on it */
 
     /* Borders and Rings */
     --border-color: oklch(32% 0.015 265); /* #2F333B hairline, decorative */
-    --ring-color: oklch(68% 0.168 262.881); /* accent-1, 7.15:1 -- focus must be seen */
+    --ring-color: oklch(68% 0.168 262.881); /* accent-1, 7.17:1 -- focus must be seen */
   }
 }
 
