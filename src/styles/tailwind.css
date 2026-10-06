@@ -5,8 +5,16 @@
  * Colours come from the active realm. <html data-realm="..."> selects one,
  * and the raw values (--brand-*, --ink-*-lux/-nox, --disc-lux/-nox) are
  * written into index.html from src/data/brand.ts by vite.config.ts. This file
- * only decides how a scheme uses them: the page is the disc colour, text is
- * the other scheme's disc colour, and the brand colours are accents.
+ * only decides how each scheme uses them:
+ *
+ * - The page is a neutral grey, so project screenshots are never seen
+ *   against a competing colour. The greys are matched in lightness to the
+ *   discs (OKLCH L 0.97 and 0.18), so moving between the two changes hue,
+ *   not brightness.
+ * - An element marked data-surface="realm" (the intro) wears the realm
+ *   instead: the disc colour as background, the other scheme's disc colour
+ *   as text.
+ * - Brand colours are accents everywhere: tags, focus rings, hovers.
  */
 
 /* Always active */
@@ -16,6 +24,10 @@
   --font-family-display: 'Dongle', 'Noto Sans', ui-sans-serif, system-ui, sans-serif;
   --font-family-mono: 'Noto Sans Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 
+  /* Neutral counterparts of the discs */
+  --neutral-lux: #f5f5f5;
+  --neutral-nox: #121212;
+
   /* The focus ring and other accents are the same in both schemes. */
   --ring-color: var(--brand-1);
 }
@@ -24,16 +36,16 @@
 @media (prefers-color-scheme: light) {
   :root {
     /* Base Colors */
-    --default-background-color: var(--disc-lux);
-    --default-foreground-color: var(--disc-nox);
-    --surface-background-color: color-mix(in oklch, var(--disc-lux) 50%, white);
-    --surface-foreground-color: var(--disc-nox);
+    --default-background-color: var(--neutral-lux);
+    --default-foreground-color: var(--neutral-nox);
+    --surface-background-color: white;
+    --surface-foreground-color: var(--neutral-nox);
 
     /* Semantic Colors */
-    --primary-background-color: var(--disc-nox);
-    --primary-foreground-color: var(--disc-lux);
-    --secondary-background-color: color-mix(in oklch, var(--disc-nox) 12%, var(--disc-lux));
-    --secondary-foreground-color: color-mix(in oklch, var(--disc-nox) 72%, var(--disc-lux));
+    --primary-background-color: var(--neutral-nox);
+    --primary-foreground-color: var(--neutral-lux);
+    --secondary-background-color: color-mix(in oklch, var(--neutral-nox) 12%, var(--neutral-lux));
+    --secondary-foreground-color: color-mix(in oklch, var(--neutral-nox) 72%, var(--neutral-lux));
 
     /* Brand colours as small text */
     --ink-1: var(--ink-1-lux);
@@ -41,6 +53,13 @@
     --ink-3: var(--ink-3-lux);
 
     /* Borders */
+    --border-color: color-mix(in oklch, var(--neutral-nox) 22%, var(--neutral-lux));
+  }
+
+  [data-surface='realm'] {
+    --default-background-color: var(--disc-lux);
+    --default-foreground-color: var(--disc-nox);
+    --secondary-foreground-color: color-mix(in oklch, var(--disc-nox) 72%, var(--disc-lux));
     --border-color: color-mix(in oklch, var(--disc-nox) 22%, var(--disc-lux));
   }
 }
@@ -49,16 +68,16 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* Base Colors */
-    --default-background-color: var(--disc-nox);
-    --default-foreground-color: var(--disc-lux);
-    --surface-background-color: color-mix(in oklch, var(--disc-nox) 92%, white);
-    --surface-foreground-color: var(--disc-lux);
+    --default-background-color: var(--neutral-nox);
+    --default-foreground-color: var(--neutral-lux);
+    --surface-background-color: color-mix(in oklch, var(--neutral-nox) 92%, white);
+    --surface-foreground-color: var(--neutral-lux);
 
     /* Semantic Colors */
-    --primary-background-color: var(--disc-lux);
-    --primary-foreground-color: var(--disc-nox);
-    --secondary-background-color: color-mix(in oklch, var(--disc-lux) 12%, var(--disc-nox));
-    --secondary-foreground-color: color-mix(in oklch, var(--disc-lux) 72%, var(--disc-nox));
+    --primary-background-color: var(--neutral-lux);
+    --primary-foreground-color: var(--neutral-nox);
+    --secondary-background-color: color-mix(in oklch, var(--neutral-lux) 12%, var(--neutral-nox));
+    --secondary-foreground-color: color-mix(in oklch, var(--neutral-lux) 72%, var(--neutral-nox));
 
     /* Brand colours as small text */
     --ink-1: var(--ink-1-nox);
@@ -66,6 +85,13 @@
     --ink-3: var(--ink-3-nox);
 
     /* Borders */
+    --border-color: color-mix(in oklch, var(--neutral-lux) 22%, var(--neutral-nox));
+  }
+
+  [data-surface='realm'] {
+    --default-background-color: var(--disc-nox);
+    --default-foreground-color: var(--disc-lux);
+    --secondary-foreground-color: color-mix(in oklch, var(--disc-lux) 72%, var(--disc-nox));
     --border-color: color-mix(in oklch, var(--disc-lux) 22%, var(--disc-nox));
   }
 }

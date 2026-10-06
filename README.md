@@ -67,6 +67,9 @@ defined once, in `src/data/brand.ts`:
   the ICO and the PNG app icons. Their output is committed; rerun it after
   changing the logo or a palette.
 
+The realm colours the intro; the project pages are a neutral grey of the
+same lightness (`#F5F5F5` / `#121212`), so screenshots are never seen
+against a competing colour, and the realm shows there only as accents.
 Each palette's `brand` colours are used as designed. Its `ink` colours are
 the same three shifted in lightness just far enough to reach 4.5:1 as
 small text, and are used only for that.

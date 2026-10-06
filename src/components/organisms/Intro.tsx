@@ -4,7 +4,10 @@ import Logo from '../atoms/Logo';
 
 function Intro(): JSX.Element {
   return (
-    <section className="flex min-h-dvh snap-start flex-col items-center justify-between px-6 py-10 text-center">
+    <section
+      data-surface="realm"
+      className="bg-default-bg text-default-fg flex min-h-dvh snap-start flex-col items-center justify-between px-6 py-10 text-center"
+    >
       {/* Balances the "My Journey" link so the name block sits in the middle. */}
       <div aria-hidden="true" className="h-14" />
 
