@@ -2,16 +2,19 @@
 """Regenerate the subset WOFF2 webfonts in public/assets/fonts/.
 
 The upstream Noto variable fonts are ~2 MB each because they carry every
-script Noto supports plus a `wdth` axis this site never uses. This script
-pins `wdth` to 100, keeps `wght` variable, and splits each family into a
-"latin" and a "latin-ext" file so the browser only fetches the ranges a
-page actually renders.
+script Noto supports plus a `wdth` axis this site never uses, and Dongle is
+~4 MB per weight because it is mostly Hangul. This script pins Noto's `wdth`
+to 100, keeps `wght` variable, and splits each font into a "latin" and a
+"latin-ext" file so the browser only fetches the ranges a page actually
+renders.
 
 Usage:
     pip install fonttools brotli
-    # Download the variable TTFs from https://fonts.google.com and put them
-    # in a directory, then:
+    # Download the TTFs from https://fonts.google.com and put them in a
+    # directory, then regenerate everything:
     python3 scripts/subset-fonts.py /path/to/downloaded/ttfs
+    # ...or only the fonts whose output stem is listed:
+    python3 scripts/subset-fonts.py /path/to/downloaded/ttfs Dongle-Regular
 
 Keep the unicode-range values in src/styles/fonts.css in sync with the
 ranges below.
@@ -31,28 +34,39 @@ LATIN_EXT = (
     "U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF"
 )
 
-# (upstream TTF filename, output directory, output filename stem)
+# (upstream TTF filename, output directory, output filename stem, is variable)
 FAMILIES = [
-    ("NotoSans-VariableFont_wdth,wght.ttf", "Noto_Sans", "NotoSans"),
-    ("NotoSerifDisplay-VariableFont_wdth,wght.ttf", "Noto_Serif_Display", "NotoSerifDisplay"),
-    ("NotoSansMono-VariableFont_wdth,wght.ttf", "Noto_Sans_Mono", "NotoSansMono"),
+    ("NotoSans-VariableFont_wdth,wght.ttf", "Noto_Sans", "NotoSans", True),
+    ("NotoSansMono-VariableFont_wdth,wght.ttf", "Noto_Sans_Mono", "NotoSansMono", True),
+    ("Dongle-Regular.ttf", "Dongle", "Dongle-Regular", False),
+    ("Dongle-Bold.ttf", "Dongle", "Dongle-Bold", False),
 ]
 
 OUT_ROOT = os.path.join(os.path.dirname(__file__), "..", "public", "assets", "fonts")
 LAYOUT_FEATURES = "kern,liga,clig,calt,ccmp,locl,mark,mkmk"
 
 
-def main(src_dir: str) -> None:
-    for ttf, out_dir, stem in FAMILIES:
+def main(src_dir: str, only: list[str]) -> None:
+    unknown = set(only) - {stem for _, _, stem, _ in FAMILIES}
+    if unknown:
+        sys.exit(f"unknown font stem(s): {', '.join(sorted(unknown))}")
+
+    for ttf, out_dir, stem, is_variable in FAMILIES:
+        if only and stem not in only:
+            continue
+
         src = os.path.join(src_dir, ttf)
         if not os.path.isfile(src):
             sys.exit(f"missing source font: {src}")
 
-        pinned = "/tmp/subset-fonts-pinned.ttf"
-        subprocess.run(
-            ["python3", "-m", "fontTools.varLib.instancer", src, "wdth=100", "-o", pinned],
-            check=True,
-        )
+        # Static fonts have no axes to pin and go straight to subsetting.
+        pinned = src
+        if is_variable:
+            pinned = "/tmp/subset-fonts-pinned.ttf"
+            subprocess.run(
+                ["python3", "-m", "fontTools.varLib.instancer", src, "wdth=100", "-o", pinned],
+                check=True,
+            )
 
         target_dir = os.path.join(OUT_ROOT, out_dir)
         os.makedirs(target_dir, exist_ok=True)
@@ -75,6 +89,6 @@ def main(src_dir: str) -> None:
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
+    if len(sys.argv) < 2:
         sys.exit(__doc__)
-    main(sys.argv[1])
+    main(sys.argv[1], sys.argv[2:])

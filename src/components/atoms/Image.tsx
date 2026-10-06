@@ -15,7 +15,9 @@ const Image = ({ imagePath, alt, supportsVariants = false, width = 1000, height 
   const getImageSrc = (mode: string, ext: string) => (supportsVariants ? `${imagePath}/${mode}/img.${ext}` : `${imagePath}/img.${ext}`);
 
   const imgClasses = 'rounded-xl w-[40svh] max-w-full h-auto';
-  const blurImgClasses = 'rounded-xl max-h-[40svh] inset-0 absolute -z-1 scale-90 blur-3xl saturate-200';
+  // A soft glow that stays close to the image's edges: barely smaller than
+  // the image, and blurred just enough to fade out within a short distance.
+  const blurImgClasses = 'rounded-xl max-h-[40svh] inset-0 absolute -z-1 scale-97 blur-[32px] saturate-200';
 
   // Ordered most to least specific: the browser picks the first <source>
   // whose media and type it supports, so the dark variants must come first.

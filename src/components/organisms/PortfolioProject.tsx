@@ -47,7 +47,7 @@ const PortfolioProject = ({
         <Image imagePath={imagePath} alt={`Screenshot of '${title}'`} supportsVariants={supportsVariants} />
         <div className="flex h-full flex-col gap-3">
           <p className="text-secondary-fg font-mono text-base tracking-widest">{date}</p>
-          <h3 className="text-3xl">{title}</h3>
+          <h3 className="font-display text-4xl font-bold">{title}</h3>
           <p className="line-clamp-5 text-base text-pretty break-words">{descriptionHook}</p>
           {showMoreInfo ? (
             <div className="text-base text-pretty">
