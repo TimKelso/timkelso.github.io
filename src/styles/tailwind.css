@@ -8,9 +8,10 @@
  * only decides how each scheme uses them:
  *
  * - The page is a neutral grey, so project screenshots are never seen
- *   against a competing colour. The greys are matched in lightness to the
- *   discs (OKLCH L 0.97 and 0.18), so moving between the two changes hue,
- *   not brightness.
+ *   against a competing colour. The light grey matches the Lux discs'
+ *   lightness (OKLCH L 0.97). The dark one sits a touch below the Nox discs
+ *   (L 0.15 against 0.18) for a deeper black, while staying clear of pure
+ *   black, where OLED pixels switch fully off and smear when scrolling.
  * - An element marked data-surface="realm" (the intro) wears the realm
  *   instead: the disc colour as background, the other scheme's disc colour
  *   as text.
@@ -26,7 +27,7 @@
 
   /* Neutral counterparts of the discs */
   --neutral-lux: #f5f5f5;
-  --neutral-nox: #121212;
+  --neutral-nox: #0c0c0c;
 
   /* The focus ring and other accents are the same in both schemes. */
   --ring-color: var(--brand-1);
