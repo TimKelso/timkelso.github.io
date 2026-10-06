@@ -1,9 +1,11 @@
+import type { Tag } from './tags';
+
 export interface Project {
   date: string;
   title: string;
   descriptionHook: string;
   descriptionLong: string[];
-  tags: string[];
+  tags: Tag[];
   imagePath: string;
   supportsVariants?: boolean;
   projectURL?: string | null;

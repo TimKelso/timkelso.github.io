@@ -5,10 +5,15 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
+    "strict": true,
+
+    /* Node runs scripts/*.ts directly, which needs the .ts in import paths. */
+    "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": true,
 
     /* Composite projects must emit, so keep the output out of the repo. */
     "outDir": "./node_modules/.tmp/tsconfig.node",
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo"
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.ts", "scripts/*.ts", "src/data/brand.ts"]
 }

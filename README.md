@@ -32,6 +32,7 @@ npm run dev
 | `npm run build`        | Typecheck, then build to `dist/`               |
 | `npm run preview`      | Serve the production build locally             |
 | `npm run typecheck`    | `tsc` only, no build                           |
+| `npm run icons`        | Regenerate favicons and app icons in `public/` |
 | `npm run lint`         | ESLint over the project                        |
 | `npm run format`       | Rewrite files with Prettier                    |
 | `npm run format:check` | Fail if anything is unformatted (what CI runs) |
@@ -49,12 +50,35 @@ public/assets/    Images, fonts and favicons served from the site root
 scripts/          Build-time utilities not part of the app bundle
 ```
 
+## Brand
+
+The TK monogram and its three palettes -- **Aqua**, **Ignis** and
+**Natura**, each with a Lux (light) and Nox (dark) disc colour -- are
+defined once, in `src/data/brand.ts`:
+
+- `vite.config.ts` writes each palette into `index.html` as custom
+  properties on `[data-realm]`, plus a small script that picks a realm at
+  random for each visit (kept for the tab's session) and points the
+  favicon at it. `src/styles/tailwind.css` maps those properties onto the
+  light and dark theme tokens.
+- `src/components/atoms/Logo.tsx` draws the monogram inline, coloured by
+  the active realm.
+- `npm run icons` (`scripts/generate-icons.ts`) redraws the SVG favicons,
+  the ICO and the PNG app icons. Their output is committed; rerun it after
+  changing the logo or a palette.
+
+Each palette's `brand` colours are used as designed. Its `ink` colours are
+the same three shifted in lightness just far enough to reach 4.5:1 as
+small text, and are used only for that.
+
 ## Fonts
 
-The webfonts in `public/assets/fonts/` are Latin subsets of the Noto
-families, split by `unicode-range` into `latin` and `latin-ext` files.
+The webfonts in `public/assets/fonts/` are Latin subsets of Noto Sans,
+Noto Sans Mono and [Dongle](https://fonts.google.com/specimen/Dongle) (the
+display face, licensed under the SIL Open Font License -- see its
+`OFL.txt`), split by `unicode-range` into `latin` and `latin-ext` files.
 Regenerate them with `scripts/subset-fonts.py` after downloading the
-upstream variable TTFs from [Google Fonts](https://fonts.google.com):
+upstream TTFs from [Google Fonts](https://fonts.google.com):
 
 ```bash
 pip install fonttools brotli

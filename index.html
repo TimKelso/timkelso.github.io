@@ -1,20 +1,20 @@
 <!doctype html>
-<html lang="en" class="snap-y snap-mandatory snap-always">
+<html lang="en" class="snap-y snap-mandatory snap-always" data-realm="aqua">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Favicon -->
+    <!-- Favicon
+         Aqua is the default realm. The realm script that vite.config.ts
+         injects into this <head> swaps the elements with ids below to the
+         realm picked for this visit. -->
     <meta name="apple-mobile-web-app-title" content="Tim Kelso" />
-    <link rel="icon" type="image/png" href="/assets/favicon/light_mode/favicon-96x96.png" sizes="96x96" media="(prefers-color-scheme: light)" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon/light_mode/favicon.svg" media="(prefers-color-scheme: light)" />
-    <link rel="icon" href="/assets/favicon/light_mode/favicon.ico" sizes="32x32" media="(prefers-color-scheme: light)" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/light_mode/apple-touch-icon.png" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link id="icon-svg" rel="icon" type="image/svg+xml" href="/assets/favicon/aqua.svg" />
+    <link id="icon-apple" rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon-aqua.png" />
     <link rel="manifest" href="/assets/favicon/site.webmanifest" />
-    <link rel="icon" type="image/png" href="/assets/favicon/dark_mode/favicon-96x96.png" sizes="96x96" media="(prefers-color-scheme: dark)" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon/dark_mode/favicon.svg" media="(prefers-color-scheme: dark)" />
-    <link rel="icon" href="/assets/favicon/dark_mode/favicon.ico" sizes="32x32" media="(prefers-color-scheme: dark)" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/dark_mode/apple-touch-icon.png" media="(prefers-color-scheme: dark)" />
+    <meta id="theme-color-light" name="theme-color" content="#E6EBFF" media="(prefers-color-scheme: light)" />
+    <meta id="theme-color-dark" name="theme-color" content="#0F0D26" media="(prefers-color-scheme: dark)" />
 
     <!-- Title -->
     <title>Tim Kelso</title>

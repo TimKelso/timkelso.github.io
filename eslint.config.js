@@ -15,7 +15,8 @@ export default [
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
-        project: './tsconfig.json',
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
         ecmaVersion: 'latest',
         sourceType: 'module',
         ecmaFeatures: { jsx: true },
@@ -55,11 +56,12 @@ export default [
     },
   },
   {
-    files: ['vite.config.ts', 'postcss.config.ts'],
+    files: ['vite.config.ts', 'postcss.config.ts', 'scripts/*.ts'],
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
-        project: './tsconfig.node.json',
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
         ecmaVersion: 'latest',
         sourceType: 'module',
       },

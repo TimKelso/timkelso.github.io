@@ -44,7 +44,7 @@ const Bookmarks = ({ onScrollToProject }: BookmarksProps): JSX.Element => {
               </li>
             ))
           ) : (
-            <li className="text-muted-fg px-2 py-1.5 text-sm">No bookmarks yet</li>
+            <li className="text-secondary-fg px-2 py-1.5 text-sm">No bookmarks yet</li>
           )}
         </ul>
       )}
